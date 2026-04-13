@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nepal-imports.vercel.app/sitemap.xml
+Sitemap: https://nepal-imports.vercel.app/sitemap_index.xml

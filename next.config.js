@@ -3,7 +3,7 @@ const nextConfig = {
     async headers() {
       return [
         {
-          source: '/sitemap.xml',
+          source: '/sitemap_index.xml',
           headers: [
             {
               key: 'Content-Type',
