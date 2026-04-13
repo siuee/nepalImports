@@ -9,10 +9,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
-<<<<<<< HEAD
-=======
     "@vercel/speed-insights": "^2.0.0",
->>>>>>> 8dbe86f (feat: integrate Vercel analytics and speed insights into the layout)
     "cheerio": "^1.2.0",
     "next": "^15.1.6",
     "react": "^19.0.0",
