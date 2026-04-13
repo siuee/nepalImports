@@ -1,5 +1,9 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+<<<<<<< HEAD
+=======
+import { SpeedInsights } from "@vercel/speed-insights/next";
+>>>>>>> 8dbe86f (feat: integrate Vercel analytics and speed insights into the layout)
 import { CustomCursor } from "@/components/CustomCursor";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
@@ -38,6 +42,10 @@ export default function RootLayout({ children }) {
           <SiteFooter />
         </div>
         <Analytics />
+<<<<<<< HEAD
+=======
+        <SpeedInsights />
+>>>>>>> 8dbe86f (feat: integrate Vercel analytics and speed insights into the layout)
       </body>
     </html>
   );
