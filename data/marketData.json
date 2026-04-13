@@ -1,0 +1,695 @@
+[
+  {
+    "name": "Tomato Big (Indian)",
+    "nepali": "गोलभेडा ठूलो",
+    "min": 60,
+    "max": 70,
+    "avg": 65,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Tomato Small (Local)",
+    "nepali": "गोलभेडा सानो",
+    "min": 24,
+    "max": 30,
+    "avg": 26,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Tomato Small (Terai)",
+    "nepali": "तराई गोलभेडा",
+    "min": 30,
+    "max": 36,
+    "avg": 33,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Potato Red",
+    "nepali": "रातो आलु",
+    "min": 16,
+    "max": 21,
+    "avg": 18.5,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Potato Red (Indian)",
+    "nepali": "भारतीय आलु",
+    "min": 20,
+    "max": 23,
+    "avg": 21.5,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Onion Dry (Indian)",
+    "nepali": "प्याज सुक्खा",
+    "min": 35,
+    "max": 37,
+    "avg": 36,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Onion Green",
+    "nepali": "हरियो प्याज",
+    "min": 80,
+    "max": 100,
+    "avg": 90,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Carrot (Local)",
+    "nepali": "गाजर स्थानीय",
+    "min": 25,
+    "max": 35,
+    "avg": 30,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Carrot (Terai)",
+    "nepali": "तराई गाजर",
+    "min": 20,
+    "max": 30,
+    "avg": 25,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Cabbage (Local)",
+    "nepali": "बन्दा स्थानीय",
+    "min": 25,
+    "max": 35,
+    "avg": 30,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Cauliflower (Local)",
+    "nepali": "काउली स्थानीय",
+    "min": 30,
+    "max": 40,
+    "avg": 35,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Cauliflower (Jyapu)",
+    "nepali": "ज्यापु काउली",
+    "min": 50,
+    "max": 60,
+    "avg": 55,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Radish White (Local)",
+    "nepali": "मूला सेतो",
+    "min": 12,
+    "max": 16,
+    "avg": 14,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Radish White (Hybrid)",
+    "nepali": "हाइब्रिड मूला",
+    "min": 15,
+    "max": 20,
+    "avg": 17.5,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Brinjal Long",
+    "nepali": "भन्टा लामो",
+    "min": 40,
+    "max": 50,
+    "avg": 45,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Brinjal Round",
+    "nepali": "भन्टा गोलो",
+    "min": 60,
+    "max": 70,
+    "avg": 65,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Cowpea Long",
+    "nepali": "बोडी",
+    "min": 80,
+    "max": 100,
+    "avg": 92.5,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Green Peas",
+    "nepali": "केराउ हरियो",
+    "min": 70,
+    "max": 80,
+    "avg": 75,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "French Bean (Local)",
+    "nepali": "सिमी स्थानीय",
+    "min": 40,
+    "max": 60,
+    "avg": 52.5,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "French Bean (Rajma)",
+    "nepali": "राजमा सिमी",
+    "min": 100,
+    "max": 120,
+    "avg": 110,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Sword Bean",
+    "nepali": "बत्ताई सिमी",
+    "min": 90,
+    "max": 120,
+    "avg": 102.5,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Bitter Gourd",
+    "nepali": "करेला",
+    "min": 100,
+    "max": 120,
+    "avg": 110,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Bottle Gourd",
+    "nepali": "लौका",
+    "min": 50,
+    "max": 60,
+    "avg": 55,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Pointed Gourd (Local)",
+    "nepali": "परवर",
+    "min": 80,
+    "max": 100,
+    "avg": 90,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Snake Gourd",
+    "nepali": "चिचिन्डा",
+    "min": 70,
+    "max": 100,
+    "avg": 83.33,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Sponge Gourd",
+    "nepali": "नेनुवा",
+    "min": 100,
+    "max": 120,
+    "avg": 110,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Pumpkin",
+    "nepali": "फर्सी",
+    "min": 50,
+    "max": 60,
+    "avg": 55,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Squash Long",
+    "nepali": "इस्कुस लामो",
+    "min": 30,
+    "max": 40,
+    "avg": 35,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Okra (Lady Finger)",
+    "nepali": "भिन्डी",
+    "min": 80,
+    "max": 110,
+    "avg": 100,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Sweet Potato",
+    "nepali": "सखरखण्ड",
+    "min": 60,
+    "max": 70,
+    "avg": 65,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Arum (Taro)",
+    "nepali": "पिंडालु",
+    "min": 55,
+    "max": 65,
+    "avg": 60,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Christophine",
+    "nepali": "इस्कुस",
+    "min": 55,
+    "max": 65,
+    "avg": 60,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Broad Leaf Mustard",
+    "nepali": "रायो साग",
+    "min": 50,
+    "max": 60,
+    "avg": 56.67,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Spinach",
+    "nepali": "पालुंगो",
+    "min": 50,
+    "max": 70,
+    "avg": 60,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Cress Leaf",
+    "nepali": "चमसुर",
+    "min": 80,
+    "max": 90,
+    "avg": 85,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Mustard Leaf",
+    "nepali": "तोरीको साग",
+    "min": 40,
+    "max": 50,
+    "avg": 45,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Fenugreek Leaf",
+    "nepali": "मेथी",
+    "min": 80,
+    "max": 90,
+    "avg": 85,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Yam",
+    "nepali": "तरुल",
+    "min": 60,
+    "max": 70,
+    "avg": 65,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Bakula",
+    "nepali": "बकुला",
+    "min": 35,
+    "max": 45,
+    "avg": 40,
+    "unit": "KG",
+    "cat": "vegetable"
+  },
+  {
+    "name": "Apple (A Grade)",
+    "nepali": "स्याउ ए ग्रेड",
+    "min": 280,
+    "max": 340,
+    "avg": 310,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Apple (B Grade)",
+    "nepali": "स्याउ बी ग्रेड",
+    "min": 180,
+    "max": 220,
+    "avg": 200,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Banana (Local)",
+    "nepali": "केरा स्थानीय",
+    "min": 60,
+    "max": 80,
+    "avg": 70,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Mango (Terai)",
+    "nepali": "आँप",
+    "min": 80,
+    "max": 120,
+    "avg": 100,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Orange (Mandarin)",
+    "nepali": "सुन्तला",
+    "min": 80,
+    "max": 100,
+    "avg": 90,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Lime (Kagati)",
+    "nepali": "कागती",
+    "min": 60,
+    "max": 80,
+    "avg": 70,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Litchi",
+    "nepali": "लिची",
+    "min": 150,
+    "max": 200,
+    "avg": 175,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Pineapple",
+    "nepali": "भुईंकटहर",
+    "min": 70,
+    "max": 100,
+    "avg": 85,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Papaya",
+    "nepali": "मेवा",
+    "min": 50,
+    "max": 70,
+    "avg": 60,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Watermelon",
+    "nepali": "तरबुजा",
+    "min": 30,
+    "max": 50,
+    "avg": 40,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Pomegranate",
+    "nepali": "अनार",
+    "min": 200,
+    "max": 280,
+    "avg": 240,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Guava",
+    "nepali": "अम्बा",
+    "min": 60,
+    "max": 90,
+    "avg": 75,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Pear",
+    "nepali": "नासपाती",
+    "min": 100,
+    "max": 150,
+    "avg": 125,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Kiwi",
+    "nepali": "किवी",
+    "min": 200,
+    "max": 300,
+    "avg": 250,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Avocado",
+    "nepali": "एभोकेडो",
+    "min": 250,
+    "max": 350,
+    "avg": 300,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Dragon Fruit",
+    "nepali": "ड्रैगन फल",
+    "min": 450,
+    "max": 600,
+    "avg": 525,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Strawberry",
+    "nepali": "स्ट्रबेरी",
+    "min": 450,
+    "max": 500,
+    "avg": 475,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Jackfruit",
+    "nepali": "कटहर",
+    "min": 40,
+    "max": 60,
+    "avg": 50,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Coconut",
+    "nepali": "नरिवल",
+    "min": 60,
+    "max": 80,
+    "avg": 70,
+    "unit": "Piece",
+    "cat": "fruit"
+  },
+  {
+    "name": "Grapes",
+    "nepali": "अंगुर",
+    "min": 200,
+    "max": 300,
+    "avg": 250,
+    "unit": "KG",
+    "cat": "fruit"
+  },
+  {
+    "name": "Ginger (Fresh)",
+    "nepali": "अदुवा",
+    "min": 90,
+    "max": 120,
+    "avg": 105,
+    "unit": "KG",
+    "cat": "spice"
+  },
+  {
+    "name": "Garlic Dry (Chinese)",
+    "nepali": "लसुन सुक्खा चिनियाँ",
+    "min": 200,
+    "max": 280,
+    "avg": 240,
+    "unit": "KG",
+    "cat": "spice"
+  },
+  {
+    "name": "Garlic Dry (Nepali)",
+    "nepali": "लसुन सुक्खा नेपाली",
+    "min": 150,
+    "max": 200,
+    "avg": 175,
+    "unit": "KG",
+    "cat": "spice"
+  },
+  {
+    "name": "Chilli Red (Dry)",
+    "nepali": "खुर्सानी सुक्खा",
+    "min": 350,
+    "max": 420,
+    "avg": 385,
+    "unit": "KG",
+    "cat": "spice"
+  },
+  {
+    "name": "Chilli Green (Fresh)",
+    "nepali": "खुर्सानी हरियो",
+    "min": 25,
+    "max": 40,
+    "avg": 32,
+    "unit": "KG",
+    "cat": "spice"
+  },
+  {
+    "name": "Chilli Dalle (Akbare)",
+    "nepali": "दल्ले खुर्सानी",
+    "min": 300,
+    "max": 400,
+    "avg": 350,
+    "unit": "KG",
+    "cat": "spice"
+  },
+  {
+    "name": "Coriander Green",
+    "nepali": "धनिया हरियो",
+    "min": 150,
+    "max": 200,
+    "avg": 175,
+    "unit": "KG",
+    "cat": "spice"
+  },
+  {
+    "name": "Turmeric (Fresh)",
+    "nepali": "बेसार",
+    "min": 100,
+    "max": 150,
+    "avg": 125,
+    "unit": "KG",
+    "cat": "spice"
+  },
+  {
+    "name": "Mushroom (Kanya)",
+    "nepali": "कन्या च्याउ",
+    "min": 150,
+    "max": 170,
+    "avg": 160,
+    "unit": "KG",
+    "cat": "mushroom"
+  },
+  {
+    "name": "Mushroom (Button)",
+    "nepali": "बटन च्याउ",
+    "min": 280,
+    "max": 330,
+    "avg": 305,
+    "unit": "KG",
+    "cat": "mushroom"
+  },
+  {
+    "name": "King Oyster Mushroom",
+    "nepali": "किंग अयस्टर",
+    "min": 280,
+    "max": 300,
+    "avg": 290,
+    "unit": "KG",
+    "cat": "mushroom"
+  },
+  {
+    "name": "Shiitake (Lentinula)",
+    "nepali": "शिताके",
+    "min": 800,
+    "max": 1000,
+    "avg": 900,
+    "unit": "KG",
+    "cat": "mushroom"
+  },
+  {
+    "name": "Large Cardamom",
+    "nepali": "ठूलो अलैंची",
+    "min": 1800,
+    "max": 2200,
+    "avg": 2000,
+    "unit": "KG",
+    "cat": "other"
+  },
+  {
+    "name": "Honey (Local)",
+    "nepali": "मह",
+    "min": 450,
+    "max": 600,
+    "avg": 525,
+    "unit": "KG",
+    "cat": "other"
+  },
+  {
+    "name": "Tea (Ilam Loose)",
+    "nepali": "इलाम चिया",
+    "min": 400,
+    "max": 600,
+    "avg": 500,
+    "unit": "KG",
+    "cat": "other"
+  },
+  {
+    "name": "Timur Pepper",
+    "nepali": "टिमुर",
+    "min": 500,
+    "max": 800,
+    "avg": 650,
+    "unit": "KG",
+    "cat": "other"
+  },
+  {
+    "name": "Fish (Fresh Rohu)",
+    "nepali": "माछा रोहु",
+    "min": 280,
+    "max": 340,
+    "avg": 310,
+    "unit": "KG",
+    "cat": "other"
+  },
+  {
+    "name": "Fish (Grass Carp)",
+    "nepali": "माछा",
+    "min": 220,
+    "max": 280,
+    "avg": 250,
+    "unit": "KG",
+    "cat": "other"
+  }
+]

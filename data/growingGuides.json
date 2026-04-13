@@ -1,0 +1,552 @@
+{
+  "1": {
+    "districtTip": {
+      "Taplejung": "Taplejung is Nepal's cardamom capital. Plant on north-facing slopes at 900–2,100m in Phungling, Furumbu, Sikaicha areas. Avoid south-facing slopes — they dry out too fast. Local Ramsey variety recommended. Join the Taplejung Cardamom Cooperative for free seedlings.",
+      "Ilam": "Ilam cardamom introduced from Sikkim in 1865. Best areas: Mabu, Fikkal zones 600–1,800m. Cardamom Development Centre at Fikkal provides free technical guidance. Plant under alder or utis trees. Avoid planting near pine.",
+      "Panchthar": "Plant at 700–2,000m elevation. Furse and Yangwarak areas are proven cardamom belts. Keep 1.5m spacing between clumps. Join local cooperative for bhatti (drying) access after harvest.",
+      "default": "Choose a shaded slope at 600–2,400m altitude with year-round stream access. Cardamom needs consistent moisture and 70–90% humidity. North or northeast-facing slopes are ideal."
+    },
+    "steps": [
+      {
+        "title": "Choose Your Site",
+        "emoji": "🗺️",
+        "desc": "Select a north-facing slope at 600–2,400m altitude. You need at least 2,000mm annual rainfall and a perennial water source nearby. The land must have natural shade — existing forest is ideal. Do NOT clear all trees.",
+        "nepal": "साइट छनौट: उत्तरमुखी भिरालो जमिन छान्नुस् जहाँ पानीको स्रोत नजिकै छ र प्राकृतिक छाया छ।"
+      },
+      {
+        "title": "Prepare Nursery Beds (Feb–Apr)",
+        "emoji": "🌱",
+        "desc": "Prepare seedbeds in partial shade. Mix soil with compost (1:1 ratio). Sow seeds from mature pods in rows 15cm apart, 2cm deep. Water twice daily. Germination takes 30–45 days. Keep seedlings 50% shaded for first 3 months.",
+        "nepal": "फेब्रुअरी–अप्रिलमा नर्सरी बेड तयार गर्नुस्। बिउलाई आधा छायाँमा राख्नुस्।"
+      },
+      {
+        "title": "Prepare Planting Site (Mar–May)",
+        "emoji": "⛏️",
+        "desc": "Clear weeds but KEEP shade trees (alder/utis are best companions — they fix nitrogen). Dig pits 45cm × 45cm × 45cm, spaced 1.5m × 1.5m. Fill with topsoil + 5kg compost per pit. Allow to settle for 2 weeks.",
+        "nepal": "झार सफा गर्नुस् तर छाया दिने रुख नकाट्नुस्। खाडल ४५×४५×४५ सेमी खन्नुस्।"
+      },
+      {
+        "title": "Transplant Suckers (Apr–Jun)",
+        "emoji": "🌿",
+        "desc": "Use 6–8 month old suckers (tillers with 3–4 leaves and developed roots). Plant at 5–7cm depth. Keep 1.5m between plants. Water immediately. Plant in the evening or on cloudy days. Mulch heavily with dry leaves.",
+        "nepal": "अप्रिल–जुनमा ६–८ महिनाको बिरुवा रोप्नुस्। बिरुवाबीच १.५ मिटर दूरी राख्नुस्।"
+      },
+      {
+        "title": "Shade Management",
+        "emoji": "🌳",
+        "desc": "Maintain 50–60% canopy cover. If shade is insufficient, plant banana or large-leafed plants temporarily. Remove excess shade if plant growth is sparse. Prune companion trees every 2 years. Never expose to direct afternoon sun.",
+        "nepal": "५०–६०% छाया कायम राख्नुस्। बढी छाया वा कम छाया दुवै हानिकारक छ।"
+      },
+      {
+        "title": "Weeding & Mulching",
+        "emoji": "🪴",
+        "desc": "Weed 3–4 times per year: March, June, September, November. Apply 10cm mulch layer of dry leaves/paddy straw around each clump — prevents moisture loss in dry season (Nov–Feb). Never hoe deeply — roots are shallow.",
+        "nepal": "वर्षमा ३–४ पटक झार उखेल्नुस्। सुकेको पात वा पराल मल्च लगाउनुस्।"
+      },
+      {
+        "title": "Fertilization",
+        "emoji": "💧",
+        "desc": "Apply 3kg well-rotted FYM (farmyard manure) per clump in March before new growth. Add wood ash (from bhatti) back to the field — it's rich in potassium. Avoid chemical fertilizers — ruins organic premium. Spray diluted cow urine monthly for disease resistance.",
+        "nepal": "मार्चमा प्रतिझाङ ३ केजी गोठेमल हाल्नुस्। रासायनिक मल प्रयोग नगर्नुस्।"
+      },
+      {
+        "title": "Pest & Disease Control",
+        "emoji": "🐛",
+        "desc": "Main disease: Chirke (mosaic virus) — remove and burn infected plants immediately. Foorkey (leaf curl) — remove affected tillers. Spray Bordeaux mixture (1%) at onset of monsoon. Check for shoot borer June–August. Remove dead stems immediately after harvest.",
+        "nepal": "चिर्के रोग लागेमा त्यो बोट जलाउनुस्। बोर्दो मिश्रण पानीमा घोलेर छर्नुस्।"
+      },
+      {
+        "title": "Harvest (Aug–Nov)",
+        "emoji": "🎯",
+        "desc": "Harvest when capsules turn dark green to violet (NOT black). Pick by hand using a knife, cutting the panicle 2cm from base. Do NOT pull — damages next year's spike. Harvest in dry weather. Dry in bhatti (traditional oven) at 50–55°C for 18–20 hours. Properly dried = dark brown, smoky aroma.",
+        "nepal": "अगस्त–नोभेम्बरमा गाढा हरियो भएपछि काट्नुस्। भट्टीमा १८–२० घण्टा सुकाउनुस्।"
+      }
+    ],
+    "videos": [
+      {
+        "id": "YHl1MQtbmF0",
+        "title": "Large Cardamom Farming in Nepal — Full Guide",
+        "desc": "Complete cultivation guide for Taplejung and Ilam districts including planting, care and harvesting"
+      },
+      {
+        "id": "qNeFXMdXX8w",
+        "title": "Alainchi Kheti — Nepali Cardamom Farm Visit",
+        "desc": "Real farm walkthrough showing planting spacing, shade management, and bhatti drying technique"
+      },
+      {
+        "id": "vOUoRMaJFMw",
+        "title": "Cardamom Disease Management Nepal",
+        "desc": "How to identify and treat Chirke and Foorkey diseases in eastern Nepal cardamom farms"
+      }
+    ],
+    "warnings": "Do NOT plant on waterlogged land — roots rot within weeks. Do NOT use chemical pesticides — loses organic premium. Do NOT harvest early (green pods) — reduces quality grade and price by 40%."
+  },
+  "2": {
+    "districtTip": {
+      "Palpa": "Palpa is Nepal's #1 ginger district. Plant in Tansen area at 400–1,500m. Best local variety: Palpa Local (medium fiber, high yield). DADO office Tansen provides subsidized seed rhizomes each February. Join Palpa Ginger Cooperative for collective drying facilities.",
+      "Syangja": "Syangja mid-hills (800–1,400m) are ideal. Galyang and Waling areas have established ginger belts. Intercrop with maize for first year shade. Market directly in Pokhara for 20% better price than selling to local traders.",
+      "Arghakhanchi": "Arghakhanchi has emerging ginger export zone supported by the government. Sandy loam soils in Sandhikharka area are perfect. Get NARC-certified disease-free seed rhizomes to avoid soft rot — the #1 ginger killer.",
+      "Ilam": "Ilam hill ginger has high essential oil content due to altitude. Plant at 600–1,200m. Avoid replanting in the same field for 3 years — soft rot builds up. Rotate with cardamom plots.",
+      "default": "Choose well-drained, loamy hillside at 300–1,500m. Ginger needs partial shade in first 2 months. Never plant in fields where ginger was grown last year — soft rot persists in soil."
+    },
+    "steps": [
+      {
+        "title": "Select Seed Rhizomes (Jan–Feb)",
+        "emoji": "🌿",
+        "desc": "Buy certified disease-free seed rhizomes from NARC or cooperative. Each sett should be 20–25g with 2–3 healthy buds. Treat rhizomes by soaking in Dithane M-45 solution (3g per liter) for 30 minutes before planting. Dry in shade for 2 hours after treatment.",
+        "nepal": "जनवरी–फेब्रुअरीमा रोगमुक्त अदुवाको बिउ किन्नुस् र डाइथेन एम-४५ घोलमा ३० मिनेट भिजाउनुस्।"
+      },
+      {
+        "title": "Land Preparation (Feb–Mar)",
+        "emoji": "⛏️",
+        "desc": "Plough 2–3 times to 25cm depth. Remove all stones and previous crop residue. Add 15 tonnes FYM per hectare and mix thoroughly. On slopes, make raised beds 1m wide along the contour to prevent erosion. On flat land, make 25cm high ridges for drainage.",
+        "nepal": "जमिन दुई–तीन पटक जोत्नुस्। प्रति हेक्टर १५ टन गोठेमल मिसाउनुस्।"
+      },
+      {
+        "title": "Planting (Feb–Apr)",
+        "emoji": "🌱",
+        "desc": "Plant setts 5–8cm deep in furrows, 25cm apart within rows, 30cm between rows. On slopes, plant along contours. Cover with soil and then 5cm mulch of dry leaves immediately — prevents moisture loss and weed growth. Plant in the morning.",
+        "nepal": "फेब्रुअरी–अप्रिलमा बिउ ५–८ सेमी गहिराइमा रोप्नुस्। कतारबीच ३० सेमी दूरी राख्नुस्।"
+      },
+      {
+        "title": "Mulching — Critical Step",
+        "emoji": "🍂",
+        "desc": "Apply 10–15cm thick mulch of paddy straw or dry leaves immediately after planting. This is the MOST important step — ginger grown without mulch yields 40% less. Replenish mulch in July when it decomposes. Mulch keeps soil cool, moist, and weed-free.",
+        "nepal": "रोपेपछि तुरुन्त १०–१५ सेमी मोटो मल्च लगाउनुस्। यो सबभन्दा महत्वपूर्ण काम हो।"
+      },
+      {
+        "title": "Irrigation & Care (Apr–Oct)",
+        "emoji": "💧",
+        "desc": "In Nepal hills, monsoon rain (Jun–Sep) usually sufficient. Water every 10 days in Apr–Jun before monsoon. NEVER let water stagnate — soft rot develops within 24 hours of waterlogging. Weed at 45, 90, and 120 days after planting. Earth-up soil around plants at 60 days.",
+        "nepal": "अप्रिल–जुनमा हरेक १० दिनमा पानी दिनुस्। पानी जम्न नदिनुस्।"
+      },
+      {
+        "title": "Fertilization",
+        "emoji": "🌿",
+        "desc": "Top-dress with 20g urea + 20g MOP per plant at 45 days. Second dose at 90 days. In organic farming: apply 500g decomposed compost per plant at 60 days. Spray 2% potassium-rich wood ash solution monthly. Neem cake @ 250g per plant prevents nematodes and disease.",
+        "nepal": "४५ दिनमा प्रतिबोट २० ग्राम युरिया र २० ग्राम पोटाश दिनुस्।"
+      },
+      {
+        "title": "Disease Watch — Soft Rot",
+        "emoji": "⚠️",
+        "desc": "Soft rot (Pythium) is ginger's biggest killer in Nepal. Symptoms: yellowing leaves, then plant collapses. Prevention: good drainage, disease-free seed, and Trichoderma viride biocontrol (mix 100g per 15L water, drench soil). If spotted: remove plant IMMEDIATELY, drench hole with copper oxychloride. Do NOT compost infected rhizomes.",
+        "nepal": "पहेंलो पातले सफ्ट रट रोगको संकेत दिन्छ। त्यो बोट झिकेर जलाउनुस्।"
+      },
+      {
+        "title": "Harvest (Oct–Nov for fresh, Nov–Feb for dry)",
+        "emoji": "🎯",
+        "desc": "Fresh ginger: harvest at 6–8 months when leaves start yellowing. Dry ginger (sutho): harvest at 8–10 months for maximum fiber and oil content. Dig carefully with a khurpa — damaged rhizomes lose value. Wash, peel, and sun-dry for 5–7 days for sutho. Store in cool dry place.",
+        "nepal": "ताजा अदुवा: ६–८ महिनामा काट्नुस्। सुन्ठो: ८–१० महिनामा उखेल्नुस्।"
+      }
+    ],
+    "videos": [
+      {
+        "id": "IG7RFo8HDUY",
+        "title": "Ginger Farming Complete Guide — Nepal Hills",
+        "desc": "Full ginger cultivation from land prep to harvest, specifically for Nepal mid-hill conditions"
+      },
+      {
+        "id": "dXqRmHSeFfA",
+        "title": "अदुवा खेती — Nepali Ginger Cultivation",
+        "desc": "Step-by-step Nepali language guide to organic ginger farming for Palpa and Syangja conditions"
+      },
+      {
+        "id": "BM7RoHB3zos",
+        "title": "Ginger Soft Rot Disease — Prevention & Treatment",
+        "desc": "Identifying and treating Nepal's most devastating ginger disease before it destroys your harvest"
+      }
+    ],
+    "warnings": "NEVER plant ginger in the same field two years in a row — soft rot disease accumulates. NEVER waterlog — roots rot in 24 hours. Avoid full direct afternoon sun — reduces yield 30%."
+  },
+  "3": {
+    "districtTip": {
+      "Palpa": "Palpa turmeric (Besar) is the best quality in Nepal. Surya Nagar and Bagnaskali areas ideal. Clay loam holds moisture well during dry spells. Get Surya variety from DADO for highest curcumin content. Government subsidy available for first-time growers.",
+      "Arghakhanchi": "Sandhikharka area at 500–1,200m is emerging as a premium turmeric zone. Organic certification possible through NACCFL. Sell to Kathmandu processors at Rs.220/kg vs local Rs.150/kg. Form a cooperative for shared drying facility.",
+      "Makwanpur": "Hetauda surroundings (200–700m) ideal for turmeric. Note: turmeric exported from Makwanpur as \"Makwanpur Besar\" could command 15% premium. Contact local Ward Office about the municipal spice processing plant proposal.",
+      "default": "Turmeric grows at 200–1,500m altitude. It needs well-drained loam, partial to full sun, and consistent moisture. Plant on slopes to prevent waterlogging. South-facing slopes good for turmeric unlike cardamom."
+    },
+    "steps": [
+      {
+        "title": "Select Mother Rhizomes (Feb–Mar)",
+        "emoji": "🟡",
+        "desc": "Choose large, plump rhizomes 20–25g each with 1–2 buds. Surya and Roma varieties have highest curcumin content (5–7%) — important for export premium. Treat with Dithane M-45 (3g/L) for 30 min. Dry in shade 1–2 hours before planting.",
+        "nepal": "फेब्रुअरी–मार्चमा स्वस्थ ठूला गाँठो छान्नुस्। सूर्य वा रोमा जात उत्तम।"
+      },
+      {
+        "title": "Prepare Land (Mar–Apr)",
+        "emoji": "⛏️",
+        "desc": "Plough 2 times to 25cm depth. Add 15–20 tonnes FYM per hectare. Turmeric is a heavy feeder. On slopes, make raised beds along the contour 1m wide, 15cm high. Turmeric tolerates semi-shade — can intercrop under young fruit trees.",
+        "nepal": "जमिन दुई पटक जोत्नुस् र प्रति हेक्टर २० टन गोठेमल मिसाउनुस्।"
+      },
+      {
+        "title": "Planting (Apr–May)",
+        "emoji": "🌱",
+        "desc": "Plant rhizomes 5–7cm deep. Within row: 25cm. Between rows: 45–50cm. Place rhizomes horizontally with buds pointing up. Cover with soil and add 10cm mulch immediately. Planting too shallow = green/bitter turmeric. Planting too deep = slow emergence.",
+        "nepal": "अप्रिल–मेमा ५–७ सेमी गहिराइमा गाँठो रोप्नुस्। कतारबीच ४५–५० सेमी।"
+      },
+      {
+        "title": "Shade & Mulching",
+        "emoji": "🍂",
+        "desc": "Young turmeric (0–2 months) needs 50% shade. After 2 months, it can take full sun in Nepal hills. Apply paddy straw or dry leaf mulch 10cm thick — reduces irrigation need by 50%. Mulch also prevents the \"earthing up\" work needed otherwise.",
+        "nepal": "२ महिनासम्म ५०% छाया चाहिन्छ। त्यसपछि पूर्ण घाम सहन सक्छ।"
+      },
+      {
+        "title": "Irrigation & Care",
+        "emoji": "💧",
+        "desc": "Turmeric needs regular moisture but NOT waterlogging. In Nepal hills: monsoon rain usually sufficient Jun–Sep. Critical irrigation periods: Apr–Jun (before monsoon) — water every 2 weeks. Oct–Nov (maturation) — reduce water to improve curcumin concentration.",
+        "nepal": "मनसुन अगाडि हर–दुई हप्तामा पानी दिनुस्। पाकिंदा पानी घटाउनुस्।"
+      },
+      {
+        "title": "Weeding & Earthing Up",
+        "emoji": "🪴",
+        "desc": "Weed at 30, 60, and 90 days. Earth up (bring soil towards base of plant) at 60 days — encourages more rhizome development. Second earthing at 120 days. Each earthing up gives 10–15% more yield. This is the most labor-intensive but valuable step.",
+        "nepal": "३०, ६०, ९० दिनमा गोड्नुस्। ६० र १२० दिनमा माटो थुपार्नुस्।"
+      },
+      {
+        "title": "Fertilization",
+        "emoji": "🌿",
+        "desc": "Top-dress with Nitrogen: 20g urea per plant at 45 days and again at 90 days. Add wood ash (potassium) monthly. For organic: apply neem cake 200g per plant to prevent nematodes. Spray diluted cow urine every 3 weeks for disease resistance. High curcumin content = only organic management.",
+        "nepal": "४५ र ९० दिनमा युरिया थप्नुस्। जैविक तरिकाले गोमुत्र छर्नुस्।"
+      },
+      {
+        "title": "Harvest (Dec–Feb)",
+        "emoji": "🎯",
+        "desc": "Harvest at 8–9 months when leaves turn yellow and dry. Dig with fork or khurpa carefully. Separate finger rhizomes from mother. Boil whole rhizomes for 45 minutes (traditional method) — removes raw taste, reduces drying time, and kills pathogens. Sun-dry 10–15 days until hard. Polish to get shiny yellow surface.",
+        "nepal": "डिसेम्बर–फेब्रुअरीमा उखेल्नुस्। ४५ मिनेट उमालेर सुकाउनुस्।"
+      }
+    ],
+    "videos": [
+      {
+        "id": "rN8e4Sot_bI",
+        "title": "Turmeric Farming Nepal — Besar Kheti Guide",
+        "desc": "Complete turmeric cultivation guide for Nepal hill conditions including boiling and drying process"
+      },
+      {
+        "id": "VEXdqNx8u7I",
+        "title": "How to Grow Turmeric from Rhizomes",
+        "desc": "Step-by-step planting guide applicable to Nepal mid-hill conditions"
+      },
+      {
+        "id": "EqLSxm6iP0Q",
+        "title": "Turmeric Harvesting & Processing for Export",
+        "desc": "Post-harvest treatment including boiling, drying and polishing for maximum market value"
+      }
+    ],
+    "warnings": "Do NOT harvest before 8 months — curcumin content is too low. Do NOT skip boiling — raw turmeric dries unevenly. Never plant in previous year's turmeric field without 2-year gap."
+  },
+  "8": {
+    "districtTip": {
+      "Ilam": "Ilam is Nepal's tea capital. Best elevation: 1,000–2,000m on clay acidic soil. Makaibari, Kanyam, and Fikkal areas proven zones. Tea takes 3–4 years to first harvest but yields for 80+ years. Contact Ilam Tea Cooperative for subsidized clonal cuttings and technical support.",
+      "Panchthar": "Panchthar has identical conditions to Ilam. Emerging tea belt at Phidim area 800–1,600m. Organic certification possible — higher value. Land on northeast-facing slopes ideal. Government provides subsidy under Tea and Coffee Development Board program.",
+      "Taplejung": "Taplejung conditions above 1,200m excellent for high-quality first-flush tea. Colder temperatures create more complex flavor compounds. Kanchanjangha Tea Estate model — certified Fair Trade and organic.",
+      "default": "Tea needs deep (>1m) acidic soil (pH 4.5–5.5) on well-drained slopes at 600–2,000m. It is a perennial — invest properly once and harvest for 80+ years. Never plant in alkaline or waterlogged soil."
+    },
+    "steps": [
+      {
+        "title": "Choose Land — Most Critical Decision",
+        "emoji": "🗺️",
+        "desc": "Tea is a 50-80 year investment — choose land carefully. Need: well-drained slope at 1,000–2,000m, clay loam soil pH 4.5–5.5, minimum 1,200mm annual rainfall, no frost pockets. Test soil pH first — if above 6.0, tea will not grow well. Contact NTCDB (Tea & Coffee Development Board) for free soil testing.",
+        "nepal": "चिया ५०–८० वर्षको लगानी हो। माटोको पिएच ४.५–५.५ हुनुपर्छ। पहिले माटो परीक्षण गर्नुस्।"
+      },
+      {
+        "title": "Obtain Clonal Cuttings (Nov–Feb)",
+        "emoji": "🌱",
+        "desc": "Use vegetative propagation — NOT seeds. Get clonal cuttings from Ilam Tea Research Center or certified nursery. Best clones for Nepal hills: TV-1, TV-25, TV-29 (high yield, good quality). One cutting per polybag. Keep in 60% shade nursery for 4–6 months before transplanting.",
+        "nepal": "बिउ नभई कटिंग प्रयोग गर्नुस्। इलाम चिया अनुसन्धान केन्द्रबाट TV-1 वा TV-25 क्लोन लिनुस्।"
+      },
+      {
+        "title": "Land Preparation (Feb–Apr)",
+        "emoji": "⛏️",
+        "desc": "Clear vegetation, do NOT remove topsoil. Dig contour trenches 60cm × 45cm × 45cm at 1.5m spacing along the slope. Fill with topsoil mixed with 5kg acid compost per pit. Never add lime or wood ash — makes soil alkaline (kills tea). Plant grass strips between rows to prevent erosion.",
+        "nepal": "खाडल ६० × ४५ × ४५ सेमी खन्नुस्। चुन वा खरानी नहाल्नुस् — माटो क्षारीय हुन्छ।"
+      },
+      {
+        "title": "Transplant (Apr–May or Aug–Sep)",
+        "emoji": "🌿",
+        "desc": "Transplant 6-month old rooted cuttings during monsoon onset or just before. Plant 1.5m × 1.2m spacing in double hedge row system. Keep 1m shade tree every 10m. Water immediately and shade with palm leaves for first 2 weeks. Survival rate should be >90% with proper care.",
+        "nepal": "अप्रिल–मे वा अगस्ट–सेप्टेम्बरमा बिरुवा सार्नुस्। रोपेपछि पहिलो दुई हप्ता छाया दिनुस्।"
+      },
+      {
+        "title": "Young Plant Care (Year 1–3)",
+        "emoji": "🌳",
+        "desc": "Year 1: Water every 5–7 days in dry season. Weed monthly. Apply 30g urea per plant at 3 months. Year 2: First pruning at 30cm height to encourage bushy growth (centering). Year 3: Second pruning at 45cm. Do NOT pluck in Year 1–2 — let plant establish properly.",
+        "nepal": "वर्ष १–२: पानी र गोड्ने काम मात्र। वर्ष २ मा ३० सेमी उचाइमा काट्नुस्।"
+      },
+      {
+        "title": "First Harvest (Year 3–4)",
+        "emoji": "🍵",
+        "desc": "First commercial harvest at Year 3–4. Pluck \"two leaves and a bud\" only — never coarser. For Orthodox tea: hand pluck in morning before 10AM. Pluck cycle: every 7–10 days in peak season (Mar–May, Aug–Oct). For first flush premium: collect only in March–April.",
+        "nepal": "वर्ष ३–४ मा पहिलो टिपाइ। \"दुई पात र एक टुप्पो\" मात्र टिप्नुस्। बिहान टिप्नुस्।"
+      },
+      {
+        "title": "Processing (Same Day)",
+        "emoji": "🏭",
+        "desc": "Wither harvested leaf for 14–16 hours (Orthodox method). Roll for 30 minutes to release juices. Allow oxidation 2–3 hours for black tea. Fire/dry at 100–110°C for 20 minutes. Grade by size. For green tea: steam or pan-fire immediately after withering, skip oxidation. First flush = lightest withering.",
+        "nepal": "टिपेको दिन नै प्रशोधन गर्नुस्। १४–१६ घण्टा ओइल्याउनुस्। रोल गर्नुस् र सुकाउनुस्।"
+      }
+    ],
+    "videos": [
+      {
+        "id": "pLZkVEONlBk",
+        "title": "Tea Farming Nepal — Ilam Orthodox Tea Cultivation",
+        "desc": "Complete guide to starting a tea garden in Nepal hill conditions — from site selection to first harvest"
+      },
+      {
+        "id": "ogjrjOPjKuY",
+        "title": "Orthodox Tea Processing — Nepal Method",
+        "desc": "Traditional two-leaves-and-a-bud plucking and orthodox processing for premium grade tea"
+      },
+      {
+        "id": "XqhE3dN97EE",
+        "title": "How to Make Organic Tea Garden Nepal",
+        "desc": "Setting up an organic certified tea garden for direct export — Ilam district model"
+      }
+    ],
+    "warnings": "Tea needs 3+ years before first harvest — do NOT expect quick returns. Never plant in soil above pH 6.0. Never use wood ash or lime. Young plants MUST be weaned before full sun exposure."
+  },
+  "10": {
+    "districtTip": {
+      "Gulmi": "Gulmi is Nepal's coffee heartland. Musikot and Resunga areas 1,000–1,600m are ideal. Himalayan specialty coffee from here exported to Japan. DHADING and Gulmi cooperatives provide free grafted seedlings. Contact Gulmi Coffee Cooperative for market linkage.",
+      "Palpa": "Palpa coffee emerging alongside ginger. Tansen surroundings at 900–1,400m ideal. Arabica variety best here. Shade grow under existing fruit trees. Coffee Nepal brand actively sourcing from Palpa.",
+      "Syangja": "Pokhara-adjacent hills ideal for specialty coffee. Waling and Biruwa areas at 1,000–1,500m. Tourism market in Pokhara = premium direct-to-cafe sales without middlemen. Contact Coffee Nepal for farm registration.",
+      "Kaski": "Kaski hills above Pokhara (1,000–1,800m) = premium specialty coffee zone. Direct market to 200+ Pokhara cafes and hotels. Agritourism coffee plantation model working well here.",
+      "default": "Coffee grows at 800–1,800m altitude in Nepal. Arabica varieties do best in Nepal hills. It needs partial shade, 1,200–1,500mm rainfall, and well-drained acidic soil. Takes 2–3 years to first harvest."
+    },
+    "steps": [
+      {
+        "title": "Get Seedlings (Nov–Feb)",
+        "emoji": "☕",
+        "desc": "Get Arabica seedlings from NARC-approved nursery or Coffee Nepal cooperative. Best varieties for Nepal: Typica (traditional flavor), Bourbon (sweet), or S-795 (disease resistant). Avoid Robusta — too low quality for Nepal premium market. One seedling costs Rs.50–100.",
+        "nepal": "नोभेम्बर–फेब्रुअरीमा NARC अनुमोदित नर्सरीबाट अरेबिका बिरुवा किन्नुस्।"
+      },
+      {
+        "title": "Land Preparation (Jan–Mar)",
+        "emoji": "⛏️",
+        "desc": "Coffee thrives in partial shade — plant under existing fruit trees or use shade trees like silver oak. Dig pits 60cm × 60cm × 60cm, spaced 2m × 2m. Add 5kg compost + 50g lime per pit. Coffee prefers slightly less acidic soil than tea: pH 6.0–6.5.",
+        "nepal": "खाडल ६०×६०×६० सेमी खन्नुस्। प्रति खाडल ५ केजी कम्पोस्ट र ५० ग्राम चुन हाल्नुस्।"
+      },
+      {
+        "title": "Transplant (Monsoon — Jun–Jul)",
+        "emoji": "🌱",
+        "desc": "Best time to transplant is beginning of monsoon when soil moisture is high and survival rate best. Plant at same depth as nursery bag. Shade with banana leaf or shade net (50%) for first month. Space 2m × 2m with shade tree every 4m. Water every 3 days for first month.",
+        "nepal": "जुन–जुलाईमा मनसुन सुरु भएपछि बिरुवा सार्नुस्। पहिलो महिना ५०% छाया दिनुस्।"
+      },
+      {
+        "title": "Shade Management",
+        "emoji": "🌳",
+        "desc": "Maintain 30–40% shade throughout coffee's life. Silver oak is the best shade tree for Nepal coffee — grows fast, fixes nitrogen. Space shade trees 4m × 4m between coffee. Too much shade (>60%) = disease and low yield. Too little = leaf scorch. Prune shade trees annually in Jan.",
+        "nepal": "३०–४०% छाया राख्नुस्। सिल्भर ओक उत्तम छाया रुख हो।"
+      },
+      {
+        "title": "Fertilization & Care (Year 1–2)",
+        "emoji": "💧",
+        "desc": "Year 1: 30g NPK (10:26:26) at 3 months. Monthly neem cake application prevents root disease. Year 2: 60g urea in March (before rains). Top-dress compost 3kg per plant in October. Weed every 2 months. Spray copper fungicide at onset of monsoon to prevent leaf rust.",
+        "nepal": "वर्ष १: ३ महिनामा एनपीके हाल्नुस्। वर्ष २: मार्चमा युरिया थप्नुस्।"
+      },
+      {
+        "title": "First Harvest (Year 2–3)",
+        "emoji": "🍒",
+        "desc": "First small harvest at Year 2, commercial harvest Year 3. Pick only RED cherries — green cherries ruin cup quality. Harvest cherry by cherry by hand — time-consuming but essential for specialty grade. Process same day. Yield: 2–3 kg cherry per tree at Year 3, 8–10kg at peak (Year 7–10).",
+        "nepal": "वर्ष २–३ मा पहिलो टिपाइ। केवल रातो चेरी मात्र टिप्नुस्। सोही दिन प्रशोधन।"
+      },
+      {
+        "title": "Processing — The Key to Premium",
+        "emoji": "🏭",
+        "desc": "Washed (Wet) method: Remove pulp same day using depulper machine. Ferment 24–36 hours in water tank. Wash thoroughly. Dry on raised beds 2–3 weeks. Natural (Dry) method: Dry whole cherry on raised beds 3–4 weeks, turning twice daily. Washed method = cleaner cup, higher price. Both methods used in Nepal.",
+        "nepal": "वासड विधि: सोही दिन पल्प हटाउनुस्। २४–३६ घण्टा किण्वन गर्नुस्। सुकाउनुस्।"
+      }
+    ],
+    "videos": [
+      {
+        "id": "XH4e_WLDVH8",
+        "title": "Nepal Coffee Farming — Complete Cultivation Guide",
+        "desc": "Full guide to growing specialty arabica coffee in Nepal hills from Gulmi and Palpa experience"
+      },
+      {
+        "id": "ZpRWR5pTl2Y",
+        "title": "Coffee Plant Care Nepal — Monthly Guide",
+        "desc": "Month-by-month care calendar for Nepal coffee farms including shade management and fertilization"
+      },
+      {
+        "id": "fRaJtpMxbvc",
+        "title": "Coffee Cherry Processing — Washed vs Natural",
+        "desc": "How to process coffee at farm level for maximum specialty grade value in Nepal"
+      }
+    ],
+    "warnings": "Never pick green cherries — ruins batch quality. Never skip shade trees — coffee scorches in Nepal sun. Coffee takes 2–3 years before return — plan finances accordingly."
+  },
+  "14": {
+    "districtTip": {
+      "Dolpa": "Yarsa Gumba is strictly regulated. Must obtain permit from Dolpa DFO (District Forest Office). Collection season: May–July only. Go above 3,500m. Collect with local community groups — solo collection is illegal. Process and store at collection point before transport.",
+      "Humla": "Humla permits are issued by DFO Simikot. Join recognized community user group before collecting. Best areas: Saipal watershed, Jaling area above 3,800m. Collection strictly May 15 – July 15. Carry permit copy always.",
+      "default": "Yarsa Gumba is a WILD product — NOT cultivated. You must obtain annual permit from District Forest Office. Collection only May–July. Work in registered community groups. Never overcollect — sustainable harvesting protects future income."
+    },
+    "steps": [
+      {
+        "title": "Registration & Permits (Jan–Apr)",
+        "emoji": "📋",
+        "desc": "Register with your local Community Forest User Group (CFUG). Apply to District Forest Office (DFO) for annual collection permit before May. Pay the government royalty fee (varies by district Rs.1,000–3,000 per household). Permits are mandatory — illegal collection = heavy fine + product confiscation.",
+        "nepal": "जनवरी–अप्रिलमा वन विभागबाट संकलन अनुमति लिनुस्। CFUG मा दर्ता गर्नुस्।"
+      },
+      {
+        "title": "Identify Collection Sites (May–Jun)",
+        "emoji": "🗺️",
+        "desc": "Yarsa Gumba grows at 3,500–5,000m altitude in alpine meadows. Look for south-facing slopes with sparse vegetation. Best indicator: presence of ghost moth larvae in the soil. Peak collection: late May to mid-July when stroma (fungal stalk) is fully emerged but before tip breaks.",
+        "nepal": "३,५०० मिटरभन्दा माथि अल्पाइन खर्कमा खोज्नुस्। मे–जुलाईमा संकलन गर्नुस्।"
+      },
+      {
+        "title": "Sustainable Collection",
+        "emoji": "♻️",
+        "desc": "Collect only when stroma is 1–3cm above ground. Leave 20% uncollected in each area for spore dispersal (ensures next year's crop). Use a sharp stick — never disturb surrounding soil more than necessary. Mark collected areas and rotate next year. One household: max 200–300 pieces per day.",
+        "nepal": "हरेक ठाउँको २०% नछुनुस्। मिट्टी कम खोस्नुस्। अर्को वर्षको लागि केही छोड्नुस्।"
+      },
+      {
+        "title": "Handling & Drying",
+        "emoji": "☀️",
+        "desc": "Clean with soft brush — never wash with water (destroys value). Sun-dry on clean plastic sheet at altitude 2–3 days. Store in paper bag (NOT plastic) in cool dry place. Grade by size: Large (>6cm) = highest price, Medium (4–6cm), Small (<4cm). Never break stroma from caterpillar body.",
+        "nepal": "पानीले नधुनुस्। घामले २–३ दिन सुकाउनुस्। कागजको थैलोमा राख्नुस्।"
+      },
+      {
+        "title": "Transportation & Sale",
+        "emoji": "💼",
+        "desc": "Carry permit copy with you at all times during transport. Sell to registered traders only — avoid illegal brokers. Current price: Rs.25,000–35,000/kg for Grade A. Kathmandu market generally gives 20% better price than local. Community cooperative selling gives best prices.",
+        "nepal": "सधैं अनुमति पत्र साथमा राख्नुस्। दर्ता व्यापारीलाई मात्र बेच्नुस्।"
+      }
+    ],
+    "videos": [
+      {
+        "id": "UkuJXrUaBjw",
+        "title": "Yarsa Gumba Collection — Nepal Documentary",
+        "desc": "Documentary about community-based cordyceps collection in Dolpa and Humla districts of Nepal"
+      },
+      {
+        "id": "pnbFMdFi09M",
+        "title": "Yarsagumba — Nepal's Himalayan Gold",
+        "desc": "Full documentary on collection, grading, and trade of Nepal's most valuable wild product"
+      }
+    ],
+    "warnings": "ILLEGAL to collect without permit — can result in Rs.50,000 fine. NEVER collect below 3,500m — false product. NEVER wash with water. Overcollection destroys next year's population permanently."
+  },
+  "20": {
+    "districtTip": {
+      "Solukhumbu": "Solukhumbu yak churpi is the most premium. Everest Trek route = direct tourist sales possible. Join the Sagarmatha Cheese Cooperative in Namche for shared processing. Yak milk season: April–October at high pastures.",
+      "Mustang": "Mustang yak milk is the richest due to high altitude. Lo-Manthang area. Process at 3,000m+ for authentic Himalayan product. Direct trade with Kathmandu exporters available. USA dog chew market pays Rs.2,000+/kg.",
+      "default": "Yak Churpi requires yaks grazing at 2,500–5,000m. The milk is collected June–October at high alpine pastures. Traditional stone churning and pressing is the quality standard. Drying at altitude gives best hardness for dog chew export."
+    },
+    "steps": [
+      {
+        "title": "Yak Herd Management",
+        "emoji": "🐮",
+        "desc": "Keep yaks at alpine pastures (3,000–5,000m) from April to October. Milk yields: 0.5–1.5 liters per day per yak (much less than cow — but far higher fat and protein). Best milk for churpi: June–August when grass is lushest. A herd of 10 yaks produces enough for 15–20kg churpi per month.",
+        "nepal": "अप्रिल–अक्टोबरमा चरन खाएका याकको दूध उत्तम। प्रति याक दिनमा ०.५–१.५ लिटर।"
+      },
+      {
+        "title": "Milk Collection & Curdling",
+        "emoji": "🥛",
+        "desc": "Collect fresh milk morning and evening. Heat to 65°C, add buttermilk or lemon juice (0.5% of volume) as starter culture. Stir and let curdle for 20–30 minutes. Skim off the cream (sell as yak butter — equally valuable). Collect curd (chhurpi base).",
+        "nepal": "दूध ६५ डिग्रीमा तताउनुस्। छाछ वा लेमोन मिसाउनुस्। जम्न दिनुस्।"
+      },
+      {
+        "title": "Draining & Pressing",
+        "emoji": "⬇️",
+        "desc": "Pour curd into cloth bag (double layer muslin). Hang and drain for 6–8 hours. Then press under heavy stone weight for 12–24 hours. More pressing = harder final product = better dog chew quality. The pressed block should be very firm before smoking/drying.",
+        "nepal": "कपडाको थैलोमा छाउनुस्। ढुंगाले थिच्नुस्। १२–२४ घण्टा थिच्दा कडा हुन्छ।"
+      },
+      {
+        "title": "Smoking & Drying (Key Quality Step)",
+        "emoji": "🔥",
+        "desc": "Traditional method: hang pressed chhurpi over kitchen hearth smoke for 3–5 days. Modern method: smoke at 50°C for 48 hours. Then sun/air dry at altitude for 2–4 weeks. High-altitude drying (3,000m+) gives unique texture prized by dog chew market. Final product should be rock-hard.",
+        "nepal": "परम्परागत: भान्सा आगोमाथि ३–५ दिन झुन्ड्याउनुस्। त्यसपछि घाममा सुकाउनुस्।"
+      },
+      {
+        "title": "Grading & Packaging for Export",
+        "emoji": "📦",
+        "desc": "Grade by size: Large (>10cm) = dog chew export grade, highest price. Medium = diaspora food market. Small/broken = local consumption. Vacuum seal for export — moisture ruins dog chew within weeks. Label: \"Himalayan Yak Churpi from Nepal, 100% natural, no preservatives\". Export via TEPC-registered traders.",
+        "nepal": "ठूलो = कुकुर च्युइ निर्यात। मझौला = प्रवासी नेपाली बजार। भ्याकुम सिल गर्नुस्।"
+      }
+    ],
+    "videos": [
+      {
+        "id": "tMijRWb97ew",
+        "title": "Himalayan Yak Churpi Making — Traditional Process",
+        "desc": "Traditional Nepali yak cheese making process from Solukhumbu district"
+      },
+      {
+        "id": "r5Y2_TfGdxs",
+        "title": "Yak Churpi — Nepal's Dog Chew Export Story",
+        "desc": "How yak churpi became Nepal's fastest growing export — from highland pasture to PetSmart"
+      }
+    ],
+    "warnings": "Never use cow milk — must be pure yak for authentic product and export certification. Never skip pressing — soft churpi does not qualify for dog chew export. Moisture ruins product — must be completely dried."
+  },
+  "27": {
+    "districtTip": {
+      "Jumla": "Jumla apple at 2,300–3,000m is world-class organic. Plant on south-facing slopes for maximum sun. Chankheli and Tatopani areas historically best. Best varieties: Red Delicious, Golden, Macintosh — all suited to Jumla cold winters. Contact DADO Jumla for free grafted saplings program.",
+      "Mustang": "Mustang apples at 2,500–3,500m ripen slightly later (Sep–Oct). Jomsom and Lo-Manthang areas. Dry Mustang climate means very sweet, dense-fleshed apples. Tourism market in Jomsom = direct premium pricing. Apple festival every October draws buyers.",
+      "Humla": "Humla apple quality equal to Jumla but remote location. Rara area apples. Cold chain investment needed. Partner with Nepali Times or other media for \"Himalayan Organic Apple\" story — the brand value alone adds 30% price premium.",
+      "default": "High-altitude apples (2,000–3,500m) in Nepal are organic by default — no chemicals reach this altitude. They have superior flavor due to extreme temperature variation between day and night. This is the marketing story."
+    },
+    "steps": [
+      {
+        "title": "Site Selection & Soil Prep (Nov–Feb)",
+        "emoji": "🗺️",
+        "desc": "South-facing slopes at 2,000–3,500m altitude. Soil: sandy loam to loam pH 5.8–7.0. MUST have cold winters (chilling requirement: 1,000+ hours below 7°C) — Jumla has 1,200–1,400 chilling hours. Mark planting holes 6m × 6m spacing. Add 20kg compost + 500g lime per pit. Let settle 4 weeks.",
+        "nepal": "दक्षिणमुखी भिरालोमा खाडल ६×६ मिटर दूरीमा खन्नुस्। प्रति खाडल २० केजी कम्पोस्ट।"
+      },
+      {
+        "title": "Obtain Grafted Saplings (Feb–Mar)",
+        "emoji": "🌱",
+        "desc": "ONLY use grafted saplings — NOT seedlings grown from apple seeds. Seedling apples take 12–15 years and produce poor quality fruit. Grafted saplings fruit in 3–4 years. Get from DADO or accredited nursery. Best rootstocks for Nepal highlands: M-9, M-26, or local Jumla seedling rootstock.",
+        "nepal": "अनिवार्य: कलम गरिएको बिरुवा मात्र रोप्नुस्। बिउबाट उम्रिएको बिरुवाले खराब फल दिन्छ।"
+      },
+      {
+        "title": "Planting (Mar–Apr after last frost)",
+        "emoji": "🌳",
+        "desc": "Plant after last frost risk — mid-March for Jumla, late March for Mustang. Plant at same depth as nursery container. Firm soil well around roots. Stake with bamboo pole immediately — wind protection critical at high altitude. Water thoroughly. Apply 10cm mulch keeping 10cm gap from stem base.",
+        "nepal": "अन्तिम हिउँपछि मार्चमा रोप्नुस्। बाँसको खम्बाले थाम्नुस्। पानी दिनुस्।"
+      },
+      {
+        "title": "Training & Pruning (Year 1–3)",
+        "emoji": "✂️",
+        "desc": "Year 1: Remove all flowers — let plant establish only. Select 3–4 main scaffold branches. Year 2: Light heading cut to encourage branching. Year 3: Continue scaffold development. Remove crossing branches, dead wood, water sprouts. Pruning time: December–January (dormant season). In Jumla/Mustang: prune after heavy snowmelt.",
+        "nepal": "वर्ष १: फूल झार्नुस्। वर्ष २–३: ठूलो हाँगाहरू मात्र राखी काँट्नुस्।"
+      },
+      {
+        "title": "Pollination — Critical",
+        "emoji": "🐝",
+        "desc": "Apple trees need cross-pollination. Plant at minimum 2 different compatible varieties (e.g., Red Delicious + Golden Delicious, or any variety + Granny Smith as pollinator). Ratio: 1 pollinator tree per 8 main variety trees. MUST have bees — consider beekeeping alongside apple orchard for double income.",
+        "nepal": "कम्तीमा दुई जात मिसाएर रोप्नुस्। मौरीपालन साथमा गर्नुस् — दोब्बर आम्दानी।"
+      },
+      {
+        "title": "Fertilization Schedule",
+        "emoji": "💧",
+        "desc": "March: 200g urea per tree (age 4+ trees). May: 200g SSP (superphosphate). September: 200g MOP (potash — improves color and sweetness). October: 20kg compost per tree. For organic only: replace urea with 5L diluted cow urine monthly. Wood ash provides potassium. At Jumla altitude — DO NOT exceed recommended doses in cold soil.",
+        "nepal": "मार्च: युरिया। मे: SSP फस्फेट। सेप्टेम्बर: पोटास। अक्टोबर: कम्पोस्ट।"
+      },
+      {
+        "title": "Harvest (Aug–Oct by altitude)",
+        "emoji": "🍎",
+        "desc": "Jumla (2,300m): September–October. Mustang (3,000m+): October–November. Pick by hand — never shake tree. Test maturity: seeds should be brown, not white. Press gently — slight give = ripe. Store in cool dark room (traditional pits work well in Jumla cold). Grade by size and color before sale.",
+        "nepal": "जुम्ला: सेप्टेम्बर–अक्टोबर। मुस्ताङ: अक्टोबर–नोभेम्बर। हातले टिप्नुस्।"
+      }
+    ],
+    "videos": [
+      {
+        "id": "TKhfADRqGbE",
+        "title": "Jumla Apple Farming — Nepal's Himalayan Organic Apple",
+        "desc": "Documentary on apple farming in Jumla district — from planting to the market"
+      },
+      {
+        "id": "Hq_RxOh5NQ4",
+        "title": "Apple Orchard Management Nepal — Complete Guide",
+        "desc": "Full apple cultivation guide applicable to Nepal highland conditions"
+      },
+      {
+        "id": "9V_Zal-MHEE",
+        "title": "Apple Grafting Technique Nepal",
+        "desc": "How to graft apple trees for better quality and faster fruiting in Nepal conditions"
+      }
+    ],
+    "warnings": "Never plant seedling apples — only grafted. Must have 2+ varieties for pollination. Never harvest before seeds turn brown — ruins flavor and storage. Cold winters are essential — do NOT plant below 2,000m in Nepal."
+  }
+}
