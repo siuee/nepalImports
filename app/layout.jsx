@@ -2,6 +2,7 @@ import "./globals.css";
 import { CustomCursor } from "@/components/CustomCursor";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nepal-imports.vercel.app";
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           {children}
           <SiteFooter />
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
