@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { CustomCursor } from "@/components/CustomCursor";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           {children}
           <SiteFooter />
         </div>
+        <Analytics />
       </body>
     </html>
   );
