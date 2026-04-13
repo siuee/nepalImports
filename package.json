@@ -2,6 +2,7 @@
   "name": "krishi-nepal",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/generate-sitemap.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
