@@ -217,23 +217,51 @@ nav {
 .market-date {font-size:13px;color:var(--t4);margin-top:8px;font-weight:500}
 .market-date span {color:var(--gold);font-weight:600}
 .market-search {
+  display:block;
   background:rgba(255,255,255,0.05);border:1px solid rgba(167,139,250,0.25);
   padding:12px 20px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;
-  color:var(--t1);outline:none;border-radius:var(--r);width:280px;transition:all 0.2s;
+  color:var(--t1);outline:none;border-radius:var(--r);width:280px;max-width:100%;
+  transition:all 0.2s;
+  margin-bottom:24px;
 }
 .market-search::placeholder {color:var(--t4)}
 .market-search:focus {border-color:var(--purple);box-shadow:0 0 0 3px rgba(139,92,246,0.12)}
 
-.market-tabs {display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.market-title-with-select {
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 16px;
+}
+.market-title-lines {flex:1;min-width:min(100%,220px)}
+.market-place-select {
+  background:rgba(255,255,255,0.06);border:1px solid rgba(167,139,250,0.35);
+  color:var(--t1);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
+  padding:10px 14px;border-radius:var(--r);cursor:pointer;outline:none;
+  max-width:min(100%,320px);
+}
+.market-place-select:focus {border-color:var(--purple);box-shadow:0 0 0 3px rgba(139,92,246,0.12)}
+.market-place-select option {background:var(--bg2);color:var(--t1)}
+
+.market-error-block {padding:24px;border-radius:var(--r-sm);background:rgba(251,146,60,0.08);border:1px solid rgba(251,146,60,0.25)}
+
+.market-tabs {
+  display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap;
+  position:relative;z-index:2;
+}
 .market-tab {
+  display:inline-flex;align-items:center;gap:6px;
   background:rgba(255,255,255,0.05);border:1px solid var(--bdr2);
   color:var(--t3);padding:8px 18px;font-size:12px;font-weight:600;
   cursor:pointer;border-radius:20px;transition:all 0.2s;
 }
+.market-tab-count {
+  font-size:10px;font-weight:700;opacity:0.88;min-width:1.2em;text-align:center;
+  background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:10px;color:var(--t2);
+}
+.market-tab.active .market-tab-count {background:rgba(255,255,255,0.2);color:#fff}
 .market-tab.active,.market-tab:hover {
   background:var(--violet);border-color:transparent;color:#fff;
   box-shadow:0 0 16px rgba(124,58,237,0.35);
 }
+.market-tab:disabled {opacity:0.45;cursor:not-allowed;pointer-events:none}
 .market-grid {
   display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
   gap:10px;max-height:520px;overflow-y:auto;padding-right:6px;
