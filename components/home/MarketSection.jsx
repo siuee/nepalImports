@@ -137,13 +137,14 @@ function MarketPricesListing({ data, err, placeLabel, officialHref }) {
   );
 }
 
-/** Stable key: new listing state whenever place changes or a new payload arrives (incl. empty vs full). */
+/** Stable key: new listing state when place or dataset identity changes (not every cacheServedAt tick). */
 function listingKey(placeId, data) {
   if (data === null) return `${placeId}-pending`;
   const ok = data.ok !== false;
   const count = typeof data.count === "number" ? data.count : (data.items?.length ?? 0);
   const at = data.fetchedAt || "unknown";
-  return `${placeId}-${ok}-${count}-${at}`;
+  const cache = data.fromCache ? "-fc" : "";
+  return `${placeId}-${ok}-${count}-${at}${cache}`;
 }
 
 export function MarketSection() {
@@ -246,6 +247,14 @@ export function MarketSection() {
                 </a>
                 {" · "}
                 Fetched {new Date(data.fetchedAt).toLocaleString("en-NP", { timeZone: "Asia/Kathmandu" })}
+                {data.fromCache ? (
+                  <>
+                    {" · "}
+                    <span className="market-cache-note" title={data.liveErrorMessage || undefined}>
+                      Saved copy (official site did not respond)
+                    </span>
+                  </>
+                ) : null}
               </>
             ) : (
               <>Loading latest official prices…</>

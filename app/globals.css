@@ -215,6 +215,11 @@ nav {
   animation:livePulse 1.5s infinite;box-shadow:0 0 8px var(--purple);
 }
 .market-date {font-size:13px;color:var(--t4);margin-top:8px;font-weight:500}
+.market-cache-note {
+  color:var(--gold);font-weight:600;font-style:italic;
+  border-bottom:1px dotted rgba(251,191,36,0.45);
+  cursor:help;
+}
 .market-date span {color:var(--gold);font-weight:600}
 .market-search {
   display:block;
