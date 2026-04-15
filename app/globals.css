@@ -1458,3 +1458,69 @@ a.opp-card-link {
   .live-strip {padding:36px 20px}
   .live-strip-inner {grid-template-columns:1fr}
 }
+
+/* Producer Tab Styles */
+.no-data-box {
+  background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.15);
+  padding:28px;border-radius:var(--r);text-align:center;margin:16px 0;
+}
+.no-data-icon {font-size:48px;margin-bottom:12px}
+.no-data-title {
+  font-size:18px;font-weight:700;color:var(--gold);margin-bottom:8px;
+}
+.no-data-text {font-size:14px;color:var(--t2);line-height:1.6;margin-bottom:12px}
+.no-data-hint {
+  font-size:12px;color:var(--t4);background:rgba(0,0,0,0.2);padding:12px;
+  border-radius:var(--r-sm);text-align:left;
+}
+
+.producer-list {display:flex;flex-direction:column;gap:16px;margin-bottom:20px}
+.producer-card {
+  background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);
+  padding:20px;border-radius:var(--r);
+}
+.producer-header {margin-bottom:12px}
+.producer-name {font-size:17px;font-weight:700;color:var(--green)}
+.producer-location {font-size:13px;color:var(--t3);margin-top:4px}
+.producer-contact {font-size:13px;color:var(--t2);margin-bottom:10px;display:flex;gap:12px;flex-wrap:wrap}
+.producer-production {font-size:13px;color:var(--t2);margin-bottom:12px;line-height:1.5}
+.producer-practices {margin-top:12px}
+.producer-practices strong {font-size:12px;color:var(--t3);display:block;margin-bottom:6px}
+.producer-practices-list {margin:0;padding-left:18px;font-size:13px;color:var(--t2);line-height:1.6}
+.producer-practices-list li {margin-bottom:4px}
+.producer-source {font-size:11px;color:var(--t4);margin-top:10px;font-style:italic}
+.producer-disclaimer {
+  font-size:11px;color:var(--t4);background:rgba(0,0,0,0.15);padding:12px;
+  border-radius:var(--r-sm);line-height:1.5;
+}
+
+/* Seed Tab Styles */
+.seed-list {display:flex;flex-direction:column;gap:16px;margin-bottom:20px}
+.seed-card {
+  background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.15);
+  padding:20px;border-radius:var(--r);
+}
+.seed-header {margin-bottom:12px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px}
+.seed-name {font-size:16px;font-weight:700;color:var(--gold)}
+.seed-type {font-size:12px;color:var(--t4);background:rgba(0,0,0,0.2);padding:4px 10px;border-radius:20px}
+.seed-price {margin-bottom:10px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.seed-price-label {font-size:13px;color:var(--t3)}
+.seed-price-value {font-size:22px;font-weight:800;color:var(--green)}
+.seed-price-unit {font-size:13px;color:var(--t4)}
+.seed-price-na {font-size:14px;color:var(--t4)}
+.seed-source {font-size:11px;color:var(--t4);margin-bottom:10px}
+.seed-availability {font-size:13px;color:var(--t2);margin-bottom:12px}
+.seed-guidance {margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.08)}
+.seed-guidance strong {font-size:12px;color:var(--gold);display:block;margin-bottom:8px}
+.seed-guidance-text {font-size:13px;color:var(--t2);line-height:1.7;margin:0}
+.seed-disclaimer {
+  font-size:11px;color:var(--t4);background:rgba(0,0,0,0.15);padding:12px;
+  border-radius:var(--r-sm);line-height:1.5;margin-bottom:16px;
+}
+.seed-help-box {
+  background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);
+  padding:16px;border-radius:var(--r);margin-top:16px;
+}
+.seed-help-title {font-size:14px;font-weight:700;color:var(--cyan);margin-bottom:10px}
+.seed-help-list {margin:0;padding-left:18px;font-size:13px;color:var(--t2);line-height:1.8}
+.seed-help-list li {margin-bottom:4px}

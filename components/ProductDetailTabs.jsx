@@ -6,6 +6,8 @@ import { resolveDistrictSlug } from "@/lib/catalog";
 import { fmtPrice } from "@/lib/fmtPrice";
 import { matchProductToKalimati } from "@/lib/matchKalimatiProduct";
 import { bsMonthNameNpForAdMidMonth, localizeEnglishMonthsToBs } from "@/lib/bsCalendar";
+import { getProducerData } from "@/lib/producers";
+import { getSeedData } from "@/lib/seeds";
 
 /** English abbreviations — used only to match `plantMonth` / `harvestMonth` / `season` strings in data. */
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -33,6 +35,8 @@ const TABS = [
   { id: "prices", label: "Prices" },
   { id: "soil", label: "Soil Analysis" },
   { id: "climate", label: "Climate & Season" },
+  { id: "producers", label: "Producers" },
+  { id: "seeds", label: "Seeds" },
   { id: "ai", label: "AI Suggestion" },
   { id: "grow", label: "Growing Guide" },
 ];
@@ -41,6 +45,9 @@ export function ProductDetailTabs({ product: p, guide }) {
   const [tab, setTab] = useState("prices");
   const [priceItems, setPriceItems] = useState(null);
   const [priceLoading, setPriceLoading] = useState(true);
+
+  const producerData = useMemo(() => getProducerData(p.slug), [p.slug]);
+  const seedData = useMemo(() => getSeedData(p.slug), [p.slug]);
 
   const adYear = useMemo(() => new Date().getFullYear(), []);
   const loc = useCallback(
@@ -390,6 +397,176 @@ export function ProductDetailTabs({ product: p, guide }) {
             <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }} lang="ne">
               {loc(p.season)}
             </div>
+          </div>
+        </div>
+      )}
+
+      {tab === "producers" && (
+        <div className="modal-tab-pane active">
+          <div
+            style={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: 12,
+              letterSpacing: 2,
+              textTransform: "uppercase",
+              color: "var(--t4)",
+              marginBottom: 12,
+            }}
+          >
+            Verified Producers in Nepal — {p.name}
+          </div>
+          
+          {!producerData.producers || producerData.producers.length === 0 ? (
+            <div className="no-data-box">
+              <div className="no-data-icon">🏭</div>
+              <div className="no-data-title">No Verified Producers Found</div>
+              <div className="no-data-text">
+                We don&apos;t have verified producer information for {p.name} yet. 
+                This could mean either there are no large-scale producers, 
+                or we haven&apos;t verified any yet.
+              </div>
+              <div className="no-data-hint">
+                <strong>To add producers:</strong> Contact your local Agricultural Knowledge Centre (AKC), 
+                District Agriculture Office, or FNCCI for verified producer lists.
+              </div>
+            </div>
+          ) : (
+            <div className="producer-list">
+              {producerData.producers.map((producer, idx) => (
+                <div key={idx} className="producer-card">
+                  <div className="producer-header">
+                    <div className="producer-name">{producer.name}</div>
+                    <div className="producer-location">
+                      📍 {producer.location}, {producer.district}
+                    </div>
+                  </div>
+                  
+                  <div className="producer-contact">
+                    <strong>Contact:</strong>
+                    {producer.contact.phone && <span> 📞 {producer.contact.phone}</span>}
+                    {producer.contact.email && <span> ✉️ {producer.contact.email}</span>}
+                  </div>
+                  
+                  <div className="producer-production">
+                    <strong>Production:</strong> {producer.production.annual}
+                    <br />
+                    <span style={{ fontSize: 12, color: "var(--t4)" }}>
+                      Since {producer.production.since} • {producer.production.certifications?.join(", ")}
+                    </span>
+                  </div>
+                  
+                  {producer.practices && producer.practices.length > 0 && (
+                    <div className="producer-practices">
+                      <strong>Production Methods:</strong>
+                      <ul className="producer-practices-list">
+                        {producer.practices.map((practice, pidx) => (
+                          <li key={pidx}>{practice}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {producer.source && (
+                    <div className="producer-source">
+                      Source: {producer.source}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+          
+          <div className="producer-disclaimer">
+            <strong>Disclaimer:</strong> Producer information is compiled from various sources 
+            including government agencies, cooperatives, and industry associations. 
+            Always verify information independently before making business decisions.
+          </div>
+        </div>
+      )}
+
+      {tab === "seeds" && (
+        <div className="modal-tab-pane active">
+          <div
+            style={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: 12,
+              letterSpacing: 2,
+              textTransform: "uppercase",
+              color: "var(--t4)",
+              marginBottom: 12,
+            }}
+          >
+            Seed Prices & Guidance — {p.name}
+          </div>
+          
+          {!seedData.seeds || seedData.seeds.length === 0 ? (
+            <div className="no-data-box">
+              <div className="no-data-icon">🌱</div>
+              <div className="no-data-title">No Seed Information Found</div>
+              <div className="no-data-text">
+                We don&apos;t have seed information for {p.name} in our database yet.
+              </div>
+              <div className="no-data-hint">
+                <strong>To find seeds:</strong> Visit your nearest Agricultural Knowledge Centre (AKC), 
+                contact the National Seed Company, or check with local seed dealers.
+              </div>
+            </div>
+          ) : (
+            <div className="seed-list">
+              {seedData.seeds.map((seed, idx) => (
+                <div key={idx} className="seed-card">
+                  <div className="seed-header">
+                    <div className="seed-name">{seed.name}</div>
+                    <div className="seed-type">{seed.type}</div>
+                  </div>
+                  
+                  {seed.priceNPR ? (
+                    <div className="seed-price">
+                      <span className="seed-price-label">Price:</span>
+                      <span className="seed-price-value">Rs. {seed.priceNPR.toLocaleString()}</span>
+                      <span className="seed-price-unit"> / {seed.unit}</span>
+                    </div>
+                  ) : (
+                    <div className="seed-price">
+                      <span className="seed-price-label">Price:</span>
+                      <span className="seed-price-value seed-price-na">Price not available</span>
+                    </div>
+                  )}
+                  
+                  {seed.priceSource && (
+                    <div className="seed-source">
+                      Source: {seed.priceSource}
+                    </div>
+                  )}
+                  
+                  <div className="seed-availability">
+                    <strong>Availability:</strong> {seed.availability}
+                  </div>
+                  
+                  <div className="seed-guidance">
+                    <strong>🌱 Nepal-Specific Guidance:</strong>
+                    <p className="seed-guidance-text">{seed.guidance}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          <div className="seed-disclaimer">
+            <strong>Note:</strong> Seed prices may vary by season, location, and supplier. 
+            Prices shown are approximate and should be verified with local suppliers before purchasing. 
+            Always buy from certified sellers to ensure quality.
+          </div>
+          
+          <div className="seed-help-box">
+            <div className="seed-help-title">Where to Buy Seeds in Nepal</div>
+            <ul className="seed-help-list">
+              <li><strong>Agricultural Knowledge Centres (AKCs)</strong> — 75 centres across all districts</li>
+              <li><strong>National Seed Company</strong> — Main office in Kathmandu</li>
+              <li><strong>District Agriculture Offices</strong> — For local varieties</li>
+              <li><strong>State Seed Laboratories</strong> — For certified seeds</li>
+              <li><strong>Local nurseries</strong> — For fruit trees and specialty crops</li>
+            </ul>
           </div>
         </div>
       )}
