@@ -1,73 +1,84 @@
-import ampisMarkets from "@/data/ampisMarkets.json";
+/**
+ * Vercel Cron: warm Redis for Kalimati + every AMPIS market (same payloads as /api/prices).
+ * Schedule: every 3 hours UTC — vercel.json. Successful runs do ~1 + N Redis SETs (N = AMPIS count).
+ *
+ * Set CRON_SECRET in Vercel; invocations use Authorization: Bearer <CRON_SECRET>.
+ */
+import { AMPIS_MARKETS } from "@/lib/live/ampis";
 import { buildAmpisPricesPayload, buildKalimatiPricesPayload } from "@/lib/prices/livePayload";
-import {
-  setSnapshot,
-  snapshotKeyAmpis,
-  snapshotKeyKalimati,
-} from "@/lib/prices/snapshotStore";
+import { priceRowCount } from "@/lib/prices/priceRowCount";
+import { setSnapshot, snapshotKeyAmpis, snapshotKeyKalimati } from "@/lib/prices/snapshotStore";
 
-/** Allow enough time for batched AMPIS fetches + Kalimati. */
+export const dynamic = "force-dynamic";
 export const maxDuration = 120;
 
-function authorize(request) {
-  const secret = process.env.CRON_SECRET;
-  if (!secret) return false;
-  const auth = request.headers.get("authorization");
-  return auth === `Bearer ${secret}`;
+const GAP_MS = 600;
+
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
 }
 
-async function runInBatches(items, concurrency, fn) {
-  const results = [];
-  for (let i = 0; i < items.length; i += concurrency) {
-    const slice = items.slice(i, i + concurrency);
-    /* sequential batches: at most `concurrency` parallel AMPIS calls */
-    results.push(...(await Promise.all(slice.map(fn))));
+async function refreshKalimati() {
+  const key = snapshotKeyKalimati();
+  try {
+    const payload = await buildKalimatiPricesPayload();
+    const n = priceRowCount(payload);
+    if (n > 0) {
+      await setSnapshot(key, payload);
+      return { ok: true, rows: n };
+    }
+    return { ok: false, rows: 0, error: "no_rows" };
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : "kalimati_failed";
+    return { ok: false, rows: 0, error: msg };
   }
-  return results;
 }
 
-/**
- * Vercel Cron invokes this route with GET (see vercel.json).
- * Secure with Authorization: Bearer CRON_SECRET (set in project env).
- */
+async function refreshAmpis(marketId) {
+  const key = snapshotKeyAmpis(marketId);
+  try {
+    const payload = await buildAmpisPricesPayload(marketId);
+    const n = priceRowCount(payload);
+    if (n > 0) {
+      await setSnapshot(key, payload);
+      return { ok: true, rows: n, marketId };
+    }
+    return { ok: false, rows: 0, marketId, error: "no_rows" };
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : "ampis_failed";
+    return { ok: false, rows: 0, marketId, error: msg };
+  }
+}
+
 export async function GET(request) {
-  if (!authorize(request)) {
-    return Response.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  const secret = process.env.CRON_SECRET;
+  const auth = request.headers.get("authorization");
+  if (!secret || auth !== `Bearer ${secret}`) {
+    return new Response("Unauthorized", { status: 401 });
   }
 
   const startedAt = new Date().toISOString();
-  const kalimati = { key: "kalimati", ok: false, error: null };
-  const ampisResults = [];
+  const t0 = Date.now();
 
-  try {
-    const k = await buildKalimatiPricesPayload();
-    await setSnapshot(snapshotKeyKalimati(), k);
-    kalimati.ok = true;
-  } catch (e) {
-    kalimati.error = e instanceof Error ? e.message : "Kalimati failed";
+  const kalimati = await refreshKalimati();
+  await sleep(GAP_MS);
+
+  const ampis = [];
+  for (const m of AMPIS_MARKETS) {
+    ampis.push(await refreshAmpis(m.id));
+    await sleep(GAP_MS);
   }
 
-  const marketRows = await runInBatches(ampisMarkets, 3, async (m) => {
-    const id = m.id;
-    try {
-      const payload = await buildAmpisPricesPayload(id);
-      await setSnapshot(snapshotKeyAmpis(id), payload);
-      return { id, ok: true, error: null };
-    } catch (e) {
-      return { id, ok: false, error: e instanceof Error ? e.message : "AMPIS failed" };
-    }
-  });
+  const okCount = (kalimati.ok ? 1 : 0) + ampis.filter((a) => a.ok).length;
+  const durationMs = Date.now() - t0;
 
-  ampisResults.push(...marketRows);
-
-  const finishedAt = new Date().toISOString();
   return Response.json({
     ok: true,
     startedAt,
-    finishedAt,
+    durationMs,
+    savedSnapshots: okCount,
+    totalMarkets: 1 + AMPIS_MARKETS.length,
     kalimati,
-    ampis: ampisResults,
-    ampisOk: ampisResults.filter((r) => r.ok).length,
-    ampisFail: ampisResults.filter((r) => !r.ok).length,
+    ampis,
   });
 }

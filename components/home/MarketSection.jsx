@@ -56,7 +56,7 @@ function MarketPricesListing({ data, err, placeLabel, officialHref }) {
   const filtered = useMemo(() => {
     const qq = q.trim().toLowerCase();
     const active = normalizeCategoryId(tab);
-    return items.filter((m) => {
+    const out = items.filter((m) => {
       const okTab = active === "all" || normalizeCategoryId(m.cat) === active;
       const okQ =
         !qq ||
@@ -65,6 +65,13 @@ function MarketPricesListing({ data, err, placeLabel, officialHref }) {
         (m.nepali && m.nepali.includes(qq));
       return okTab && okQ;
     });
+    const coll = new Intl.Collator("en", { sensitivity: "base" });
+    out.sort((a, b) => {
+      const byEn = coll.compare(a.name || "", b.name || "");
+      if (byEn !== 0) return byEn;
+      return coll.compare(a.nepali || "", b.nepali || "");
+    });
+    return out;
   }, [tab, q, items]);
 
   return (

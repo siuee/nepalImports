@@ -1,5 +1,17 @@
+/**
+ * Per-market price API (Kalimati vs AMPIS districts use different upstream pages, same behavior).
+ *
+ * For each request:
+ * 1. Fetch live from the official source for that market.
+ * 2. If the response has price rows → upsert Redis snapshot (replaces previous) and return live JSON.
+ * 3. If live fails or has no rows → return the last Redis snapshot for that market when present
+ *    (marked fromCache); otherwise return the empty/error JSON shape the UI handles.
+ *
+ * Scheduled bulk warm: GET /api/cron/refresh-prices (Vercel Cron, every 3h UTC) — see vercel.json.
+ */
 import { AMPIS_MARKETS } from "@/lib/live/ampis";
 import { buildAmpisPricesPayload, buildKalimatiPricesPayload } from "@/lib/prices/livePayload";
+import { priceRowCount } from "@/lib/prices/priceRowCount";
 import {
   getSnapshot,
   setSnapshot,
@@ -59,43 +71,50 @@ function withCacheMeta(stored, liveErrorMessage) {
 
 async function tryServeAmpis(marketId) {
   const key = snapshotKeyAmpis(marketId);
+  let liveErrorMessage = null;
   try {
     const payload = await buildAmpisPricesPayload(marketId);
-    await setSnapshot(key, payload);
-    return Response.json(payload);
-  } catch (err) {
-    const message = err instanceof Error ? err.message : "AMPIS scrape failed";
-    const cached = await getSnapshot(key);
-    const items = Array.isArray(cached?.items) ? cached.items : [];
-    if (cached && items.length > 0) {
-      return Response.json(withCacheMeta(cached, message));
+    const n = priceRowCount(payload);
+    if (n > 0) {
+      await setSnapshot(key, payload);
+      return Response.json(payload);
     }
-    return Response.json(ampisErrorJson(marketId, message), { status: 200 });
+    liveErrorMessage = "Official source returned no price rows for this market.";
+  } catch (err) {
+    liveErrorMessage = err instanceof Error ? err.message : "AMPIS scrape failed";
   }
+  const cached = await getSnapshot(key);
+  if (priceRowCount(cached) > 0) {
+    return Response.json(withCacheMeta(cached, liveErrorMessage));
+  }
+  return Response.json(ampisErrorJson(marketId, liveErrorMessage || "AMPIS scrape failed"), { status: 200 });
 }
 
 async function tryServeKalimati() {
   const key = snapshotKeyKalimati();
+  let liveErrorMessage = null;
   try {
     const payload = await buildKalimatiPricesPayload();
-    await setSnapshot(key, payload);
-    return Response.json(payload);
-  } catch (err) {
-    const message = err instanceof Error ? err.message : "Kalimati scrape failed";
-    const cached = await getSnapshot(key);
-    const items = Array.isArray(cached?.items) ? cached.items : [];
-    if (cached && items.length > 0) {
-      return Response.json(withCacheMeta(cached, message));
+    const n = priceRowCount(payload);
+    if (n > 0) {
+      await setSnapshot(key, payload);
+      return Response.json(payload);
     }
-    return Response.json(kalimatiErrorJson(message), { status: 200 });
+    liveErrorMessage = "Official source returned no price rows for today.";
+  } catch (err) {
+    liveErrorMessage = err instanceof Error ? err.message : "Kalimati scrape failed";
   }
+  const cached = await getSnapshot(key);
+  if (priceRowCount(cached) > 0) {
+    return Response.json(withCacheMeta(cached, liveErrorMessage));
+  }
+  return Response.json(kalimatiErrorJson(liveErrorMessage || "Kalimati scrape failed"), { status: 200 });
 }
 
 /**
- * GET /api/prices
- * - ?source=kalimati — live Kalimati (session + POST for table rows)
- * - ?source=ampis&market=<uuid> — AMPIS market page
- * On live failure, returns last Redis snapshot when configured and non-empty.
+ * GET /api/prices — one market per request (see file header for save vs cache fallback).
+ * - ?source=kalimati — Kalimati
+ * - ?source=ampis&market=<uuid> — AMPIS district
  */
 export async function GET(request) {
   const url = new URL(request.url);
