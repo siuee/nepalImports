@@ -1,6 +1,7 @@
 import { fetchNrbForex } from "@/lib/live/nrb";
 
-export const revalidate = 900;
+/** NRB publishes once per working day; cache ~24h to match “daily” board rate. */
+export const revalidate = 86400;
 
 export async function GET() {
   try {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { NepalImportsAnalytics } from "@/components/home/NepalImportsAnalytics";
 
 const EXPORT_DEST = [
   { flag: "IN", name: "India", pct: 90, value: "Rs.248B", color: "#f59e0b" },
@@ -130,9 +131,9 @@ export function ChartsSection() {
             <span className="italic">Tell the Story</span>
           </h2>
           <p className="charts-live-note">
-            Charts below use static reference aggregates for storytelling. Live official feeds on this page:
-            Kalimati (wholesale), NRB (forex), Open-Meteo (weather), and NARC (soil portal). For machine-readable
-            global trade series, wire{" "}
+            Charts below mix static reference aggregates for storytelling with an import breakdown sourced from
+            Nepal Customs HS patterns. Live official feeds on this page: Kalimati (wholesale), NRB (forex),
+            Open-Meteo (weather), and NARC (soil portal). For machine-readable global trade series, wire{" "}
             <a href="https://comtradeapi.un.org" target="_blank" rel="noopener noreferrer">
               UN Comtrade
             </a>{" "}
@@ -145,6 +146,7 @@ export function ChartsSection() {
         </div>
       </div>
       <div className="charts-grid">
+        <NepalImportsAnalytics />
         <div className="chart-card fade-in-section visible">
           <div className="chart-title">Nepal export destinations</div>
           <div className="chart-subtitle">Where Nepal&apos;s exports go</div>

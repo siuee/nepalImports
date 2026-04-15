@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { resolveDistrictSlug } from "@/lib/catalog";
 import { fmtPrice } from "@/lib/fmtPrice";
 import { matchProductToKalimati } from "@/lib/matchKalimatiProduct";
+import { bsMonthNameNpForAdMidMonth, localizeEnglishMonthsToBs } from "@/lib/bsCalendar";
 
+/** English abbreviations — used only to match `plantMonth` / `harvestMonth` / `season` strings in data. */
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function monthClass(i, p) {
@@ -40,6 +42,12 @@ export function ProductDetailTabs({ product: p, guide }) {
   const [priceItems, setPriceItems] = useState(null);
   const [priceLoading, setPriceLoading] = useState(true);
 
+  const adYear = useMemo(() => new Date().getFullYear(), []);
+  const loc = useCallback(
+    (text) => (text == null || text === "" ? text : localizeEnglishMonthsToBs(String(text), adYear)),
+    [adYear]
+  );
+
   useEffect(() => {
     let cancelled = false;
     setPriceLoading(true);
@@ -67,12 +75,20 @@ export function ProductDetailTabs({ product: p, guide }) {
 
   const timeline = useMemo(
     () =>
-      MONTHS.map((mn, i) => (
-        <div key={mn} className={`season-month ${monthClass(i, p)}`}>
-          {mn}
-        </div>
-      )),
-    [p]
+      MONTHS.map((mn, i) => {
+        const bs = bsMonthNameNpForAdMidMonth(i, adYear);
+        return (
+          <div
+            key={mn}
+            className={`season-month ${monthClass(i, p)}`}
+            title={`${mn} ${adYear} (AD) — ${bs} (बिक्रम संवत, मध्य महिना)`}
+            lang="ne"
+          >
+            {bs}
+          </div>
+        );
+      }),
+    [p, adYear]
   );
 
   const distKey = p.districts[0];
@@ -284,8 +300,8 @@ export function ProductDetailTabs({ product: p, guide }) {
             >
               Irrigation
             </div>
-            <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }}>
-              {p.irrigation || "Moderate — 3-4 irrigations during growing season."}
+            <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }} lang="ne">
+              {loc(p.irrigation || "Moderate — 3-4 irrigations during growing season.")}
             </div>
           </div>
           <div
@@ -328,6 +344,9 @@ export function ProductDetailTabs({ product: p, guide }) {
           >
             Growing season calendar
           </div>
+          <div className="season-timeline-note" lang="ne">
+            प्रत्येक कोलम ग्रेगोरियन महिना (जन–डिस) हो। लेबल सो महिनाको १५ गते अनुसारको बिक्रम संवत महिना हो।
+          </div>
           <div className="season-timeline">{timeline}</div>
           <div className="climate-grid">
             <div className="climate-card">
@@ -368,7 +387,9 @@ export function ProductDetailTabs({ product: p, guide }) {
             >
               Full season timeline
             </div>
-            <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }}>{p.season}</div>
+            <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }} lang="ne">
+              {loc(p.season)}
+            </div>
           </div>
         </div>
       )}
@@ -377,9 +398,11 @@ export function ProductDetailTabs({ product: p, guide }) {
         <div className="modal-tab-pane active">
           <div className="ai-suggestion-box">
             <div className="ai-badge">Suggested summary — not official government advice</div>
-            <div className="ai-suggestion-text">
-              {p.aiSuggestion ||
-                "This product has strong potential in Nepal. Contact your local Agricultural Knowledge Centre (AKC) or NARC for region-specific guidance."}
+            <div className="ai-suggestion-text" lang="ne">
+              {loc(
+                p.aiSuggestion ||
+                  "This product has strong potential in Nepal. Contact your local Agricultural Knowledge Centre (AKC) or NARC for region-specific guidance."
+              )}
             </div>
             <div className="ai-disclaimer">
               This text is based on agronomic and economic notes in the dataset. Always consult
@@ -393,7 +416,9 @@ export function ProductDetailTabs({ product: p, guide }) {
         <div className="modal-tab-pane active">
           <div className="district-tip">
             <div className="district-tip-header">District-specific advice — {distKey}</div>
-            <div className="district-tip-text">{tipText}</div>
+            <div className="district-tip-text" lang="ne">
+              {loc(tipText)}
+            </div>
           </div>
           <div className="grow-guide-section">
             <div className="grow-guide-sub">Step-by-step growing instructions</div>
@@ -401,11 +426,13 @@ export function ProductDetailTabs({ product: p, guide }) {
               <div key={s.title} className="grow-step">
                 <div className="grow-step-num">{i + 1}</div>
                 <div>
-                  <div className="grow-step-title">
-                    {s.emoji} {s.title}
+                  <div className="grow-step-title" lang="ne">
+                    {s.emoji} {loc(s.title)}
                   </div>
-                  <div className="grow-step-desc">{s.desc}</div>
-                  {s.nepal ? <div className="grow-step-nepal">{s.nepal}</div> : null}
+                  <div className="grow-step-desc" lang="ne">
+                    {loc(s.desc)}
+                  </div>
+                  {s.nepal ? <div className="grow-step-nepal">{loc(s.nepal)}</div> : null}
                 </div>
               </div>
             ))}
@@ -413,7 +440,9 @@ export function ProductDetailTabs({ product: p, guide }) {
           {guide.warnings ? (
             <div className="warning-box">
               <div className="warning-box-title">Critical warnings</div>
-              <div className="warning-box-text">{guide.warnings}</div>
+              <div className="warning-box-text" lang="ne">
+              {loc(guide.warnings)}
+            </div>
             </div>
           ) : null}
           <div className="video-section">
@@ -423,15 +452,19 @@ export function ProductDetailTabs({ product: p, guide }) {
                 <div className="video-embed">
                   <iframe
                     src={`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1`}
-                    title={v.title}
+                    title={loc(v.title)}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     loading="lazy"
                   />
                 </div>
                 <div className="video-meta">
-                  <div className="video-title">{v.title}</div>
-                  <div className="video-desc">{v.desc}</div>
+                  <div className="video-title" lang="ne">
+                    {loc(v.title)}
+                  </div>
+                  <div className="video-desc" lang="ne">
+                    {loc(v.desc)}
+                  </div>
                   <a
                     href={`https://www.youtube.com/watch?v=${v.id}`}
                     target="_blank"

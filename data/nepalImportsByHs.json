@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "Nepal total imports by HS chapter",
+    "totalUsdBillion": 13.2,
+    "approxNprPerUsd": 133,
+    "sourceName": "Nepal Department of Customs — Foreign Trade Statistics",
+    "sourceUrl": "https://customs.gov.np/",
+    "statisticsUrl": "https://customs.gov.np/content/43/annual-foreign-trade-statistics-book-2079-80/"
+  },
+  "chapters": [
+    { "chapter": "27", "title": "Mineral fuels, oils & waxes", "detail": "Petrol, diesel, coal, LPG", "usdMillion": 2850, "pct": 21.5, "agRelated": false },
+    { "chapter": "72", "title": "Iron and steel", "detail": "Raw and semi-finished", "usdMillion": 1060, "pct": 8.0, "agRelated": false },
+    { "chapter": "84", "title": "Machinery & mechanical appliances", "detail": "Boilers, nuclear equipment, machines", "usdMillion": 927, "pct": 7.0, "agRelated": false },
+    { "chapter": "85", "title": "Electrical machinery & equipment", "detail": "Phones, TVs, batteries", "usdMillion": 861, "pct": 6.5, "agRelated": false },
+    { "chapter": "15", "title": "Animal or vegetable fats & oils", "detail": "Soybean, palm, sunflower oil", "usdMillion": 795, "pct": 6.0, "agRelated": true },
+    { "chapter": "87", "title": "Vehicles & parts", "detail": "Cars, motorcycles, trucks", "usdMillion": 662, "pct": 5.0, "agRelated": false },
+    { "chapter": "39", "title": "Plastics and articles thereof", "detail": "", "usdMillion": 530, "pct": 4.0, "agRelated": false },
+    { "chapter": "10", "title": "Cereals", "detail": "Rice, maize, wheat", "usdMillion": 477, "pct": 3.6, "agRelated": true },
+    { "chapter": "71", "title": "Pearls, precious metals", "detail": "Gold, silver", "usdMillion": 463, "pct": 3.5, "agRelated": false },
+    { "chapter": "30", "title": "Pharmaceutical products", "detail": "Medicines, vaccines", "usdMillion": 397, "pct": 3.0, "agRelated": false },
+    { "chapter": "07", "title": "Edible vegetables & roots", "detail": "", "usdMillion": 265, "pct": 2.0, "agRelated": true },
+    { "chapter": "73", "title": "Articles of iron or steel", "detail": "Pipes, structures, screws", "usdMillion": 198, "pct": 1.5, "agRelated": false },
+    { "chapter": "90", "title": "Optical, photo & medical instruments", "detail": "", "usdMillion": 198, "pct": 1.5, "agRelated": false },
+    { "chapter": "12", "title": "Oil seeds & oleaginous fruits", "detail": "", "usdMillion": 198, "pct": 1.5, "agRelated": true },
+    { "chapter": "31", "title": "Fertilizers", "detail": "", "usdMillion": 198, "pct": 1.5, "agRelated": true },
+    { "chapter": "48", "title": "Paper & paperboard", "detail": "", "usdMillion": 159, "pct": 1.2, "agRelated": false },
+    { "chapter": "08", "title": "Edible fruit & nuts", "detail": "", "usdMillion": 159, "pct": 1.2, "agRelated": true },
+    { "chapter": "21", "title": "Miscellaneous edible preparations", "detail": "Sauces, soups, yeasts", "usdMillion": 132, "pct": 1.0, "agRelated": true },
+    { "chapter": "54", "title": "Man-made filaments", "detail": "Synthetic textiles", "usdMillion": 132, "pct": 1.0, "agRelated": false },
+    { "chapter": "25", "title": "Salt, sulphur, stone, cement", "detail": "", "usdMillion": 132, "pct": 1.0, "agRelated": false },
+    { "chapter": "38", "title": "Miscellaneous chemical products", "detail": "", "usdMillion": 132, "pct": 1.0, "agRelated": false },
+    { "chapter": "40", "title": "Rubber & articles thereof", "detail": "Tires, tubes", "usdMillion": 106, "pct": 0.8, "agRelated": false },
+    { "chapter": "23", "title": "Food industry residues & fodder", "detail": "", "usdMillion": 106, "pct": 0.8, "agRelated": true },
+    { "chapter": "52", "title": "Cotton", "detail": "Yarn, woven fabrics", "usdMillion": 106, "pct": 0.8, "agRelated": true },
+    { "chapter": "01", "title": "Live animals", "detail": "", "usdMillion": 66, "pct": 0.5, "agRelated": true },
+    { "chapter": "—", "title": "All other HS chapters (72 combined)", "detail": "Footwear, furniture, toys, glass, wood, beverages, etc.", "usdMillion": 742, "pct": 5.6, "agRelated": false }
+  ]
+}
