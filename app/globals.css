@@ -786,6 +786,18 @@ nav {
 /* ── CHARTS ── */
 .chart-section {background:var(--bg);padding:96px 52px;position:relative;z-index:1}
 .charts-grid {display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.chart-card-pair-full {
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  align-items:stretch;
+}
+@media (max-width:960px) {
+  .chart-card-pair-full {grid-template-columns:1fr}
+  .import-bill-by-product-card {order:0}
+  .ag-food-imports-side {order:1}
+}
 .chart-card {
   background:var(--card);border:1px solid var(--bdr2);
   border-radius:var(--r-lg);padding:28px;
@@ -795,6 +807,38 @@ nav {
 .chart-subtitle {
   font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;
   margin-bottom:24px;color:var(--t1);
+}
+.chart-tepc-source {
+  font-size:12px;font-weight:500;color:var(--t4);line-height:1.45;
+  margin:-14px 0 18px;max-width:48rem;
+}
+.chart-tepc-source a {color:var(--cyan);text-decoration:underline;text-underline-offset:2px}
+.chart-scroll {
+  max-height:360px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  padding-right:6px;
+  scrollbar-gutter:stable;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(167,139,250,0.55) rgba(255,255,255,0.06);
+}
+.chart-scroll::-webkit-scrollbar {width:6px}
+.chart-scroll::-webkit-scrollbar-track {background:rgba(255,255,255,0.06);border-radius:6px}
+.chart-scroll::-webkit-scrollbar-thumb {background:rgba(167,139,250,0.55);border-radius:6px}
+.chart-scroll--tepc-spring {
+  height:min(440px,58vh);
+  min-height:360px;
+  max-height:520px;
+  display:flex;
+  flex-direction:column;
+}
+.chart-scroll--tepc-spring .tepc-animated-vbars {flex:1;min-height:0}
+@media (max-width:640px) {
+  .chart-scroll--tepc-spring {
+    height:min(480px,62vh);
+    min-height:380px;
+    max-height:560px;
+  }
 }
 .bar-chart {display:flex;flex-direction:column;gap:12px}
 .bar-row {display:flex;align-items:center;gap:12px}
@@ -806,7 +850,70 @@ nav {
   transition:width 1.5s cubic-bezier(0.34,1.56,0.64,1);
   gap:8px;white-space:nowrap;overflow:hidden;color:#fff;
 }
+.bar-name-short {
+  max-width:42%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 .bar-label {opacity:0.85;font-size:12px;font-weight:500}
+.bar-fill[data-fulltext], .ag-food-bar-fill[data-fulltext] {position:relative;cursor:pointer}
+.bar-fill[data-fulltext]:hover::after, .ag-food-bar-fill[data-fulltext]:hover::after {
+  content:attr(data-fulltext);
+  position:absolute;
+  left:50%;
+  bottom:calc(100% + 10px);
+  transform:translateX(-50%);
+  max-width:min(360px,86vw);
+  background:rgba(15,15,24,0.96);
+  border:1px solid rgba(167,139,250,0.35);
+  border-radius:10px;
+  color:#fff;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.4;
+  padding:8px 10px;
+  white-space:pre-line;
+  text-align:left;
+  box-shadow:0 12px 36px rgba(0,0,0,0.45);
+  z-index:20;
+  pointer-events:none;
+}
+
+/* TEPC export destinations — spring vertical bars (Remotion spring math) */
+.tepc-animated-vbars {
+  position:relative;
+  width:100%;
+  min-height:280px;
+  height:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(167,139,250,0.55) rgba(255,255,255,0.06);
+}
+.tepc-animated-vbars::-webkit-scrollbar {height:6px}
+.tepc-animated-vbars::-webkit-scrollbar-track {background:rgba(255,255,255,0.06);border-radius:6px}
+.tepc-animated-vbars::-webkit-scrollbar-thumb {background:rgba(167,139,250,0.55);border-radius:6px}
+
+/* Hover tooltip: full country line + stats (see SVG <title> for native fallback) */
+.tepc-vbar-float-tip {
+  position:absolute;
+  z-index:8;
+  pointer-events:none;
+  max-width:min(280px,92vw);
+  padding:10px 12px;
+  background:rgba(15,15,24,0.96);
+  border:1px solid rgba(167,139,250,0.38);
+  border-radius:var(--r-sm);
+  font-size:12px;
+  font-weight:500;
+  line-height:1.45;
+  color:var(--t1);
+  white-space:pre-line;
+  box-shadow:0 12px 40px rgba(0,0,0,0.45);
+  transform:translate(-50%,calc(-100% - 10px));
+  text-align:left;
+}
 .donut-container {display:flex;align-items:center;gap:28px}
 .donut-legend {display:flex;flex-direction:column;gap:12px}
 .donut-item {display:flex;align-items:center;gap:10px}
@@ -814,6 +921,41 @@ nav {
 .donut-name {font-size:14px;font-weight:500;color:var(--t1)}
 .donut-pct {font-size:13px;font-weight:700;color:var(--gold);margin-left:auto;padding-left:16px}
 
+/* Major agricultural food imports — pill bars + table (FY 2080/81 reference) */
+.ag-food-bar-chart {display:flex;flex-direction:column;gap:16px}
+.ag-food-bar-row {display:flex;align-items:center;gap:14px}
+.ag-food-bar-emoji {
+  width:40px;flex-shrink:0;font-size:26px;line-height:1;text-align:center;
+}
+.ag-food-bar-track {
+  flex:1;min-width:0;height:42px;background:rgba(255,255,255,0.07);
+  border-radius:9999px;padding:4px;overflow:hidden;
+}
+.ag-food-bar-fill {
+  height:100%;min-height:34px;display:flex;align-items:center;
+  padding:0 16px;border-radius:9999px;max-width:100%;
+  transition:width 1.35s cubic-bezier(0.34,1.56,0.64,1);
+  box-sizing:border-box;
+}
+.ag-food-bar-text {
+  font-size:clamp(11px,1.35vw,13px);font-weight:700;color:#fff;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;
+  text-shadow:0 1px 2px rgba(0,0,0,0.35);
+}
+/* Companion card beside “Annual import bill by product” */
+.ag-food-imports-side {align-self:start}
+.ag-food-imports-side-stack {display:flex;flex-direction:column;min-width:0}
+.ag-food-imports-side-subtitle {
+  font-size:clamp(17px,2vw,20px);
+  margin-bottom:6px;
+}
+.ag-food-imports-side-kicker {
+  font-size:12px;font-weight:500;color:var(--t3);line-height:1.45;
+  margin:0 0 16px;max-width:none;
+}
+.ag-food-imports-side-kicker span[lang="ne"] {
+  font-family:'Noto Sans Devanagari',sans-serif;font-weight:600;
+}
 /* Nepal imports (Customs / HS) block */
 .nepal-imports-card {
   padding:32px 32px 36px;
@@ -909,6 +1051,27 @@ nav {
   letter-spacing:0.02em;
   color:#fda4af;
   margin-bottom:14px;line-height:1.3;position:relative;z-index:1;
+  display:flex;flex-direction:column;gap:4px;
+}
+.nepal-imports-kpi-period-ne {
+  font-size:clamp(15px,2vw,20px);
+  font-weight:700;
+  line-height:1.35;
+}
+.nepal-imports-kpi-nepali-sublabel {
+  font-size:clamp(12px,1.6vw,15px);
+  font-weight:600;
+  color:#fecdd3;
+}
+.nepal-imports-period-en {
+  font-size:12px;
+  color:var(--t4);
+  margin:0 0 10px;
+  max-width:46rem;
+  line-height:1.45;
+}
+.nepal-imports-tepc-benchmark {
+  color:#fdba74;
 }
 .nepal-imports-kpi-danger .nepal-imports-kpi-value {
   font-family:'Noto Sans Devanagari','Bricolage Grotesque',sans-serif;
@@ -947,8 +1110,32 @@ nav {
   border-radius:var(--r-lg);padding:22px 24px;
 }
 .nepal-imports-panel-ladder {margin-bottom:24px}
+.nepal-imports-panel-head {
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
 .nepal-imports-panel-title {
   font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple);margin-bottom:4px;
+}
+.nepal-imports-krishi-toggle {
+  border:1px solid rgba(34,197,94,0.35);
+  background:rgba(34,197,94,0.08);
+  color:#86efac;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0.02em;
+  border-radius:999px;
+  padding:10px 16px;
+  cursor:pointer;
+  transition:all .16s ease;
+}
+.nepal-imports-krishi-toggle:hover {
+  background:rgba(34,197,94,0.14);
+  border-color:rgba(34,197,94,0.5);
+}
+.nepal-imports-krishi-toggle.is-active {
+  background:rgba(34,197,94,0.2);
+  color:#dcfce7;
+  box-shadow:0 0 0 1px rgba(34,197,94,0.28) inset;
 }
 .nepal-imports-panel-sub {
   font-size:13px;color:var(--t4);margin-bottom:18px;line-height:1.4;
@@ -959,6 +1146,12 @@ nav {
 .nepal-imports-kpi-header-mini .nepal-imports-kpi-nepali-label {
   font-size:clamp(14px,1.6vw,18px);
   margin-bottom:10px;
+}
+.nepal-imports-kpi-header-mini .nepal-imports-kpi-period-ne {
+  font-size:clamp(11px,1.35vw,14px);
+}
+.nepal-imports-kpi-header-mini .nepal-imports-kpi-nepali-sublabel {
+  font-size:clamp(10px,1.2vw,12px);
 }
 .nepal-imports-kpi-header-mini .nepal-imports-kpi-value-latin {
   font-size:clamp(16px,1.9vw,22px);
@@ -996,26 +1189,39 @@ nav {
   font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:800;color:var(--t1);
 }
 .nepal-imports-ladder-usd {
-  font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--cyan);
+  font-family:'Noto Sans Devanagari','Bricolage Grotesque',sans-serif;
+  font-size:16px;
+  font-weight:700;
+  color:#fbbf24;
+  line-height:1.35;
+  text-shadow:0 0 18px rgba(251,191,36,0.18);
 }
 .nepal-imports-ladder-track {
-  height:8px;border-radius:999px;background:rgba(255,255,255,0.06);overflow:hidden;
+  position:relative;height:8px;border-radius:999px;background:rgba(255,255,255,0.06);overflow:hidden;
 }
 .nepal-imports-ladder-fill {
-  height:100%;border-radius:999px;transition:width 1.2s cubic-bezier(0.34,1.2,0.64,1);
+  height:100%;border-radius:999px;
+}
+.nepal-imports-ladder-dot {
+  position:absolute;top:50%;width:8px;height:8px;border-radius:999px;pointer-events:none;
+  background:#fff;border:1px solid rgba(255,255,255,0.56);
+  transform:translate(-50%,-50%);
 }
 .nepal-imports-ladder-scroll {
   max-height:min(420px,52vh);
-  overflow-y:auto;
+  overflow-y:scroll;
   overflow-x:hidden;
   border-radius:var(--r-sm);
   border:1px solid rgba(255,255,255,0.07);
   padding:10px 8px 10px 10px;
   scrollbar-gutter:stable;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(167,139,250,0.55) rgba(255,255,255,0.06);
 }
 .nepal-imports-ladder-scroll::-webkit-scrollbar {width:6px}
+.nepal-imports-ladder-scroll::-webkit-scrollbar-track {background:rgba(255,255,255,0.06);border-radius:6px}
 .nepal-imports-ladder-scroll::-webkit-scrollbar-thumb {
-  background:rgba(167,139,250,0.35);border-radius:6px;
+  background:rgba(167,139,250,0.55);border-radius:6px;
 }
 .nepal-imports-ladder-sn-line {
   display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:2px;

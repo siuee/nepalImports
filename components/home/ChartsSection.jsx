@@ -2,34 +2,36 @@
 
 import { useEffect, useRef } from "react";
 import { NepalImportsAnalytics } from "@/components/home/NepalImportsAnalytics";
+import {
+  TepcAnimatedExportDestinations,
+  TepcAnimatedImportPartners,
+} from "@/components/ui/animated-vertical-bar-chart";
+import tepcTrade from "@/data/tepcForeignTrade2081_82_shrawan_kartik.json";
 
-const EXPORT_DEST = [
-  { flag: "IN", name: "India", pct: 90, value: "Rs.248B", color: "#f59e0b" },
-  { flag: "DE", name: "Germany", pct: 3, value: "Rs.8B", color: "#a855f7" },
-  { flag: "US", name: "USA", pct: 2, value: "Rs.5B", color: "#ec4899" },
-  { flag: "JP", name: "Japan", pct: 2, value: "Rs.5B", color: "#22d3ee" },
-  { flag: "AU", name: "Australia", pct: 0.3, value: "Rs.0.8B", color: "rgba(168,85,247,0.4)" },
-  { flag: "~", name: "Rest of World", pct: 2.7, value: "Rs.7B", color: "rgba(255,255,255,0.12)" },
-];
+function cleanOthersLabel(name) {
+  return name === "Others"
+    ? "All remaining (grouped by Trade and Export Promotion Centre - TEPC)"
+    : name;
+}
 
-const IMPORT_PRODUCTS = [
-  { flag: "*", name: "Cereals (Rice/Wheat)", val: 60.76, pct: 100, color: "#f43f5e" },
-  { flag: "*", name: "Vegetables & Lentils", val: 37.73, pct: 62, color: "#ec4899" },
-  { flag: "*", name: "Fruits", val: 21.17, pct: 35, color: "#a855f7" },
-  { flag: "*", name: "Potatoes", val: 7.67, pct: 13, color: "#fbbf24" },
-  { flag: "*", name: "Garlic", val: 6.75, pct: 11, color: "#f59e0b" },
-  { flag: "*", name: "Onions", val: 4.42, pct: 7, color: "rgba(245,158,11,0.6)" },
-];
+function TepcSourceLine() {
+  const href = tepcTrade?.meta?.statisticsUrl;
+  return (
+    <p className="chart-tepc-source">
+      {tepcTrade?.meta?.periodLabel ?? "FY 2081/82 Shrawan–Kartik (provisional)"} . Source:{" "}
+      {href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {tepcTrade?.meta?.sourceName ?? "Trade & Export Promotion Centre (TEPC)"}
+        </a>
+      ) : (
+        <span>{tepcTrade?.meta?.sourceName ?? "Trade & Export Promotion Centre (TEPC)"}</span>
+      )}{" "}
+      — Government of Nepal.
+    </p>
+  );
+}
 
-const DONUT = [
-  { name: "Edible Oil Re-export", pct: 44, color: "#f59e0b" },
-  { name: "Large Cardamom", pct: 11, color: "#a855f7" },
-  { name: "Carpets & Textiles", pct: 10, color: "#22d3ee" },
-  { name: "Tea & Coffee", pct: 5, color: "#ec4899" },
-  { name: "Iron & Steel", pct: 8, color: "#3b82f6" },
-  { name: "Herbs & Spices", pct: 4, color: "#f43f5e" },
-  { name: "Others", pct: 18, color: "rgba(255,255,255,0.1)" },
-];
+const COLORS = ["#f59e0b", "#a855f7", "#22d3ee", "#ec4899", "#3b82f6", "#f43f5e", "#84cc16", "#eab308"];
 
 const VALUE_CHAIN = [
   { flag: "1", name: "Fresh (Farm Gate)", pct: 2, color: "rgba(168,85,247,0.4)", fmt: "Rs.94/kg" },
@@ -45,10 +47,54 @@ const POTENTIAL = [
   { country: "Germany", cur: "$2.7M", pot: "$5.4M", pct: 50, col: "#fbbf24" },
 ];
 
+function pct2(v) {
+  return Number(v || 0).toFixed(2);
+}
+
+function toNepaliDigits(value) {
+  const map = { "0": "०", "1": "१", "2": "२", "3": "३", "4": "४", "5": "५", "6": "६", "7": "७", "8": "८", "9": "९" };
+  return String(value).replace(/[0-9]/g, (d) => map[d] ?? d);
+}
+
+function formatNprFullNepaliFrom000(v000) {
+  let n = Math.max(0, Math.round(Number(v000 || 0) * 1000));
+  if (!Number.isFinite(n) || n <= 0) return "रू ०";
+
+  const KHARBA = 100_000_000_000;
+  const ARBA = 1_000_000_000;
+  const CRORE = 10_000_000;
+  const LAKH = 100_000;
+  const HAZAR = 1_000;
+  const units = [
+    [KHARBA, "खर्ब"],
+    [ARBA, "अर्ब"],
+    [CRORE, "करोड"],
+    [LAKH, "लाख"],
+    [HAZAR, "हजार"],
+  ];
+  const out = [];
+  for (const [base, label] of units) {
+    if (n >= base) {
+      const q = Math.floor(n / base);
+      n %= base;
+      out.push(`${toNepaliDigits(q)} ${label}`);
+    }
+  }
+  if (n > 0) out.push(`${toNepaliDigits(n)}`);
+  return `रू ${out.join(" ")}`;
+}
+
 function barSecondary(d) {
-  if ("fmt" in d) return `${d.fmt} · ${d.pct}%`;
-  if ("val" in d) return `${d.val}B NPR · ${d.pct}%`;
-  return `${d.value} · ${d.pct}%`;
+  if ("fmt" in d) return `${d.fmt} · ${pct2(d.pct)}%`;
+  if ("val000" in d) return `${formatNprFullNepaliFrom000(d.val000)} · ${pct2(d.pct)}%`;
+  if ("val" in d) return `Rs.${d.val}B · ${pct2(d.pct)}%`;
+  return `${d.value} · ${pct2(d.pct)}%`;
+}
+
+function compactLabel(name, max = 22) {
+  const clean = String(name || "").replace(/\s*\([^)]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  return `${clean.slice(0, max - 1)}…`;
 }
 
 function BarChart({ rows }) {
@@ -74,51 +120,176 @@ function BarChart({ rows }) {
   }, []);
   return (
     <div className="bar-chart" ref={ref}>
-      {rows.map((d) => (
-        <div key={d.name} className="bar-row">
-          <div className="bar-country">{d.flag}</div>
-          <div className="bar-track">
-            <div
-              className="bar-fill"
-              style={{ width: "0%", background: d.color, color: "white" }}
-              data-w={`${d.pct}%`}
-            >
-              <span>{d.name}</span>
-              <span className="bar-label">{barSecondary(d)}</span>
+      {rows.map((d) => {
+        const secondary = barSecondary(d);
+        const shortName = compactLabel(d.name, 20);
+        return (
+          <div key={d.name} className="bar-row">
+            <div className="bar-country">{d.flag}</div>
+            <div className="bar-track">
+              <div
+                className="bar-fill"
+                style={{ width: "0%", background: d.color, color: "white" }}
+                data-w={`${d.pct}%`}
+                data-fulltext={`${d.name} — ${secondary}`}
+              >
+                <span className="bar-name-short">{shortName}</span>
+                <span className="bar-label">{secondary}</span>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
+    </div>
+  );
+}
+
+/** FY 2080/81 (2024–25) reference — major ag food import costs in billion NPR. */
+const AG_FOOD_IMPORTS = [
+  {
+    emoji: "🌾",
+    name: "Cereals (Includes Rice, Wheat, and Maize)",
+    billions: 60.76,
+    color: "#fb7185",
+  },
+  {
+    emoji: "🧅",
+    name: "Vegetables & Lentils (Includes fresh veggies and dried Dal)",
+    billions: 37.73,
+    color: "#ec4899",
+  },
+  {
+    emoji: "🍎",
+    name: "Fruits (Includes Apples, Bananas, and Citrus)",
+    billions: 21.17,
+    color: "#c084fc",
+  },
+  {
+    emoji: "🥔",
+    name: "Potatoes",
+    billions: 7.67,
+    color: "#fbbf24",
+  },
+  {
+    emoji: "🧄",
+    name: "Garlic",
+    billions: 6.75,
+    color: "#fb923c",
+  },
+  {
+    emoji: "🧅",
+    name: "Onions",
+    billions: 4.42,
+    color: "#b45309",
+  },
+];
+
+function AgFoodImportBars() {
+  const ref = useRef(null);
+  const maxB = Math.max(...AG_FOOD_IMPORTS.map((r) => r.billions), 1);
+
+  useEffect(() => {
+    const root = ref.current;
+    if (!root) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.querySelectorAll(".ag-food-bar-fill").forEach((b) => {
+            const w = b.dataset.w;
+            if (w) setTimeout(() => (b.style.width = w), 200);
+          });
+          io.unobserve(e.target);
+        });
+      },
+      { threshold: 0.12 }
+    );
+    io.observe(root);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div className="ag-food-bar-chart" ref={ref}>
+      {AG_FOOD_IMPORTS.map((row) => {
+        const pct = (row.billions / maxB) * 100;
+        const label = `${row.name} ${row.billions}B Rupees`;
+        const shortLabel = `${compactLabel(row.name, 26)} ${row.billions}B`;
+        const hoverFull = [
+          "Nepal's Major Agricultural Food Imports",
+          "Fiscal Year 2080/81 (2024-2025)",
+          `Item Name: ${row.name}`,
+          `Annual Import Cost (NPR): ${row.billions} Billion`,
+        ].join("\n");
+        return (
+          <div key={row.name} className="ag-food-bar-row">
+            <div className="ag-food-bar-emoji" aria-hidden>
+              {row.emoji}
+            </div>
+            <div className="ag-food-bar-track">
+              <div
+                className="ag-food-bar-fill"
+                style={{ width: "0%", background: row.color }}
+                data-w={`${pct}%`}
+                data-fulltext={hoverFull}
+              >
+                <span className="ag-food-bar-text">{shortLabel}</span>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
 export function ChartsSection() {
+  const exportTotal = Number(tepcTrade?.meta?.exportTotalNprBillion) || null;
+  const importTotal = Number(tepcTrade?.meta?.importTotalNprBillion) || null;
+
+  const exportPartners = (tepcTrade?.exports?.partners || []).map((p, i) => {
+    const val = Number(p.valueNprBillion) || 0;
+    const pct = exportTotal ? (val / exportTotal) * 100 : 0;
+    return {
+      flag: String(p.sn),
+      name: cleanOthersLabel(p.name),
+      value: `Rs.${val.toFixed(val >= 10 ? 1 : 3)}B`,
+      pct: Number(pct.toFixed(2)),
+      color: COLORS[i % COLORS.length],
+    };
+  });
+
+  const importPartners = (tepcTrade?.imports?.partners || []).map((p, i) => {
+    const val = Number(p.valueNprBillion) || 0;
+    const pct = importTotal ? (val / importTotal) * 100 : 0;
+    return {
+      flag: String(p.sn),
+      name: cleanOthersLabel(p.name),
+      value: `Rs.${val.toFixed(val >= 10 ? 1 : 3)}B`,
+      pct: Number(pct.toFixed(2)),
+      color: COLORS[i % COLORS.length],
+    };
+  });
+
+  const exportCommodities = (tepcTrade?.exports?.commodities || []).map((c, i) => ({
+    flag: String(c.sn),
+    name: cleanOthersLabel(c.name),
+    val: Number((Number(c.valueNprBillion) || 0).toFixed(3)),
+    pct: Number((Number(c.sharePct) || 0).toFixed(2)),
+    color: COLORS[i % COLORS.length],
+  }));
+
+  const importCommodities = (tepcTrade?.imports?.commodities || []).map((c, i) => ({
+    flag: String(c.sn),
+    name: cleanOthersLabel(c.name),
+    val000: Number(c.valueNpr000) || Math.round((Number(c.valueNprBillion) || 0) * 1_000_000),
+    pct: Number((Number(c.sharePct) || 0).toFixed(2)),
+    color: COLORS[i % COLORS.length],
+  }));
+
   const r = 65;
   const cx = 80;
   const cy = 80;
   const circ = 2 * Math.PI * r;
-  let off = 0;
-  const segs = DONUT.map((d) => {
-    const dl = (d.pct / 100) * circ;
-    const gap = circ - dl;
-    const rot = (off / 100) * 360;
-    off += d.pct;
-    return (
-      <circle
-        key={d.name}
-        cx={cx}
-        cy={cy}
-        r={r}
-        fill="none"
-        stroke={d.color}
-        strokeWidth={20}
-        strokeDasharray={`${dl} ${gap}`}
-        strokeDashoffset={circ * 0.25}
-        transform={`rotate(${rot - 90} ${cx} ${cy})`}
-      />
-    );
-  });
 
   return (
     <section className="chart-section" id="charts">
@@ -131,9 +302,10 @@ export function ChartsSection() {
             <span className="italic">Tell the Story</span>
           </h2>
           <p className="charts-live-note">
-            Charts below mix static reference aggregates for storytelling with an import breakdown sourced from
-            Nepal Customs HS patterns. Live official feeds on this page: Kalimati (wholesale), NRB (forex),
-            Open-Meteo (weather), and NARC (soil portal). For machine-readable global trade series, wire{" "}
+            Trade blocks (export mix, import mix, partners) use full-row FY 2081/82 Shrawan–Kartik provisional figures
+            from TEPC&apos;s Nepal Foreign Trade Statistics workbook. The import share ladder uses the same TEPC import
+            commodity table. Live official feeds on this page: Kalimati (wholesale), NRB (forex), Open-Meteo
+            (weather), and NARC (soil portal). For machine-readable global trade series, wire{" "}
             <a href="https://comtradeapi.un.org" target="_blank" rel="noopener noreferrer">
               UN Comtrade
             </a>{" "}
@@ -150,56 +322,40 @@ export function ChartsSection() {
         <div className="chart-card fade-in-section visible">
           <div className="chart-title">Nepal export destinations</div>
           <div className="chart-subtitle">Where Nepal&apos;s exports go</div>
-          <BarChart rows={EXPORT_DEST} />
+          <TepcSourceLine />
+          <div className="chart-scroll chart-scroll--tepc-spring">
+            <TepcAnimatedExportDestinations rows={exportPartners} />
+          </div>
         </div>
         <div className="chart-card fade-in-section visible">
-          <div className="chart-title">Annual import bill by product</div>
-          <div className="chart-subtitle">Billion rupees</div>
-          <BarChart rows={IMPORT_PRODUCTS} />
+          <div className="chart-title">Nepal import partners</div>
+          <div className="chart-subtitle">Where Nepal&apos;s imports come from</div>
+          <TepcSourceLine />
+          <div className="chart-scroll chart-scroll--tepc-spring">
+            <TepcAnimatedImportPartners rows={importPartners} />
+          </div>
+        </div>
+        <div
+          className="chart-card ag-food-imports-side fade-in-section visible"
+          aria-label="Major agricultural food imports — FY 2080/81"
+        >
+          <div className="ag-food-imports-side-stack">
+            <div className="chart-title">Major agricultural food imports</div>
+            <div className="chart-subtitle ag-food-imports-side-subtitle">
+              FY 2080/81 (2024–2025)
+            </div>
+            <p className="ag-food-imports-side-kicker">
+              Billion rupees (NPR) · <span lang="ne">अर्ब रुपैयाँ</span>
+            </p>
+            <AgFoodImportBars />
+          </div>
         </div>
         <div className="chart-card fade-in-section visible">
           <div className="chart-title">Nepal export composition</div>
           <div className="chart-subtitle">What Nepal exports</div>
-          <div className="donut-container">
-            <svg width="160" height="160" viewBox="0 0 160 160">
-              <circle
-                cx={cx}
-                cy={cy}
-                r={r}
-                fill="none"
-                stroke="rgba(255,255,255,0.06)"
-                strokeWidth={20}
-              />
-              {segs}
-              <text
-                x={cx}
-                y={cy - 5}
-                textAnchor="middle"
-                fill="var(--t1)"
-                fontSize={12}
-                fontWeight={700}
-              >
-                Export
-              </text>
-              <text
-                x={cx}
-                y={cy + 10}
-                textAnchor="middle"
-                fill="rgba(255,255,255,0.35)"
-                fontSize={9}
-              >
-                mix
-              </text>
-            </svg>
-            <div className="donut-legend">
-              {DONUT.map((d) => (
-                <div key={d.name} className="donut-item">
-                  <div className="donut-color" style={{ background: d.color }} />
-                  <div className="donut-name">{d.name}</div>
-                  <div className="donut-pct">{d.pct}%</div>
-                </div>
-              ))}
-            </div>
+          <TepcSourceLine />
+          <div className="chart-scroll">
+            <BarChart rows={exportCommodities} />
           </div>
         </div>
         <div className="chart-card fade-in-section visible">
