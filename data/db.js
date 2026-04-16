@@ -1708,7 +1708,7 @@ export const PRODUCTS = [
     "indiaPrice": 2200,
     "usaPrice": 28,
     "auPrice": 42,
-    "shelf": 36,
+    "shelf": 24,
     "multiplier": 1.8,
     "opportunity": 97,
     "districts": [
@@ -1739,7 +1739,7 @@ export const PRODUCTS = [
     "indiaPrice": 700,
     "usaPrice": 8,
     "auPrice": 18,
-    "shelf": 24,
+    "shelf": 36,
     "multiplier": 3.5,
     "opportunity": 94,
     "districts": [
@@ -1802,7 +1802,7 @@ export const PRODUCTS = [
     "indiaPrice": 1100,
     "usaPrice": 45,
     "auPrice": 65,
-    "shelf": 30,
+    "shelf": 48,
     "multiplier": 8,
     "opportunity": 91,
     "districts": [
@@ -1834,7 +1834,7 @@ export const PRODUCTS = [
     "indiaPrice": 0,
     "usaPrice": 35,
     "auPrice": 48,
-    "shelf": 24,
+    "shelf": 30,
     "multiplier": 7,
     "opportunity": 86,
     "districts": [
@@ -1865,7 +1865,7 @@ export const PRODUCTS = [
     "indiaPrice": 550,
     "usaPrice": 20,
     "auPrice": 28,
-    "shelf": 36,
+    "shelf": 18,
     "multiplier": 9,
     "opportunity": 75,
     "districts": [
@@ -1896,7 +1896,7 @@ export const PRODUCTS = [
     "indiaPrice": 900,
     "usaPrice": 18,
     "auPrice": 26,
-    "shelf": 24,
+    "shelf": 48,
     "multiplier": 3,
     "opportunity": 72,
     "districts": [
@@ -1927,7 +1927,7 @@ export const PRODUCTS = [
     "indiaPrice": 0,
     "usaPrice": 30,
     "auPrice": 45,
-    "shelf": 36,
+    "shelf": 30,
     "multiplier": 5,
     "opportunity": 93,
     "districts": [
@@ -1959,7 +1959,7 @@ export const PRODUCTS = [
     "indiaPrice": 0,
     "usaPrice": 40,
     "auPrice": 55,
-    "shelf": 30,
+    "shelf": 24,
     "multiplier": 11,
     "opportunity": 85,
     "districts": [
@@ -1986,7 +1986,7 @@ export const PRODUCTS = [
     "indiaPrice": 0,
     "usaPrice": 35,
     "auPrice": 50,
-    "shelf": 12,
+    "shelf": 18,
     "multiplier": 6,
     "opportunity": 86,
     "districts": [
@@ -2017,7 +2017,7 @@ export const PRODUCTS = [
     "indiaPrice": 750,
     "usaPrice": 18,
     "auPrice": 28,
-    "shelf": 60,
+    "shelf": 999,
     "multiplier": 4,
     "opportunity": 85,
     "districts": [
@@ -2077,7 +2077,7 @@ export const PRODUCTS = [
     "indiaPrice": 0,
     "usaPrice": 30,
     "auPrice": 42,
-    "shelf": 24,
+    "shelf": 18,
     "multiplier": 10,
     "opportunity": 79,
     "districts": [
@@ -2103,7 +2103,7 @@ export const PRODUCTS = [
     "indiaPrice": 0,
     "usaPrice": 1500,
     "auPrice": 2200,
-    "shelf": 36,
+    "shelf": 24,
     "multiplier": 8,
     "opportunity": 96,
     "districts": [
@@ -2167,7 +2167,7 @@ export const PRODUCTS = [
     "indiaPrice": 2200,
     "usaPrice": 80,
     "auPrice": 115,
-    "shelf": 36,
+    "shelf": 30,
     "multiplier": 9,
     "opportunity": 78,
     "districts": [
@@ -2228,7 +2228,7 @@ export const PRODUCTS = [
     "indiaPrice": 34000,
     "usaPrice": 350,
     "auPrice": 500,
-    "shelf": 18,
+    "shelf": 36,
     "multiplier": 2.4,
     "opportunity": 83,
     "districts": [
@@ -2258,7 +2258,7 @@ export const PRODUCTS = [
     "indiaPrice": 3800,
     "usaPrice": 22,
     "auPrice": 32,
-    "shelf": 12,
+    "shelf": 18,
     "multiplier": 1,
     "opportunity": 73,
     "districts": [
@@ -2377,7 +2377,7 @@ export const PRODUCTS = [
     "indiaPrice": 0,
     "usaPrice": 15,
     "auPrice": 22,
-    "shelf": 12,
+    "shelf": 18,
     "multiplier": 10,
     "opportunity": 70,
     "districts": [
@@ -2433,7 +2433,7 @@ export const PRODUCTS = [
     "indiaPrice": 2600,
     "usaPrice": 25,
     "auPrice": 36,
-    "shelf": 24,
+    "shelf": 42,
     "multiplier": 1.7,
     "opportunity": 74,
     "districts": [
@@ -2464,7 +2464,7 @@ export const PRODUCTS = [
     "indiaPrice": 0,
     "usaPrice": 60,
     "auPrice": 85,
-    "shelf": 36,
+    "shelf": 60,
     "multiplier": 16,
     "opportunity": 75,
     "districts": [
@@ -2523,7 +2523,7 @@ export const PRODUCTS = [
     "indiaPrice": 600,
     "usaPrice": 15,
     "auPrice": 22,
-    "shelf": 24,
+    "shelf": 48,
     "multiplier": 5,
     "opportunity": 71,
     "districts": [
@@ -2584,7 +2584,7 @@ export const PRODUCTS = [
     "indiaPrice": 0,
     "usaPrice": 9,
     "auPrice": 13,
-    "shelf": 24,
+    "shelf": 72,
     "multiplier": 6,
     "opportunity": 82,
     "districts": [
@@ -2612,7 +2612,7 @@ export const PRODUCTS = [
     "indiaPrice": 700,
     "usaPrice": 15,
     "auPrice": 22,
-    "shelf": 12,
+    "shelf": 18,
     "multiplier": 4,
     "opportunity": 74,
     "districts": [
@@ -2720,7 +2720,7 @@ export const PRODUCTS = [
     "indiaPrice": 450,
     "usaPrice": 8,
     "auPrice": 12,
-    "shelf": 24,
+    "shelf": 36,
     "multiplier": 3,
     "opportunity": 84,
     "imported": true,
@@ -2765,7 +2765,7 @@ export const PRODUCTS = [
     "indiaPrice": 220,
     "usaPrice": 5,
     "auPrice": 8,
-    "shelf": 24,
+    "shelf": 48,
     "multiplier": 4,
     "opportunity": 82,
     "imported": true,
@@ -2811,7 +2811,7 @@ export const PRODUCTS = [
     "indiaPrice": 340,
     "usaPrice": 7,
     "auPrice": 10,
-    "shelf": 24,
+    "shelf": 30,
     "multiplier": 3,
     "opportunity": 79,
     "imported": true,
@@ -3037,7 +3037,7 @@ export const PRODUCTS = [
     "indiaPrice": 380,
     "usaPrice": 9,
     "auPrice": 13,
-    "shelf": 24,
+    "shelf": 30,
     "multiplier": 4,
     "opportunity": 77,
     "imported": true,
@@ -3128,7 +3128,7 @@ export const PRODUCTS = [
     "indiaPrice": 900,
     "usaPrice": 15,
     "auPrice": 22,
-    "shelf": 36,
+    "shelf": 48,
     "multiplier": 4,
     "opportunity": 74,
     "imported": true,
