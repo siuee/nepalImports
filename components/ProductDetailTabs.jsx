@@ -41,6 +41,7 @@ export function ProductDetailTabs({ product: p, guide }) {
   const [tab, setTab] = useState("prices");
   const [priceItems, setPriceItems] = useState(null);
   const [priceLoading, setPriceLoading] = useState(true);
+  const [premiumDocs, setPremiumDocs] = useState({});
 
   const adYear = useMemo(() => new Date().getFullYear(), []);
   const loc = useCallback(
@@ -51,18 +52,18 @@ export function ProductDetailTabs({ product: p, guide }) {
   useEffect(() => {
     let cancelled = false;
     setPriceLoading(true);
-    fetch("/api/prices")
-      .then((r) => r.json())
-      .then((data) => {
-        if (cancelled) return;
-        setPriceItems(Array.isArray(data.items) ? data.items : []);
-      })
-      .catch(() => {
-        if (!cancelled) setPriceItems([]);
-      })
-      .finally(() => {
-        if (!cancelled) setPriceLoading(false);
-      });
+    
+    Promise.all([
+      fetch("/api/prices").then((r) => r.json()).catch(() => ({ items: [] })),
+      fetch("/api/premium-prices").then((r) => r.json()).catch(() => ({}))
+    ]).then(([kalimatiData, premiumData]) => {
+      if (cancelled) return;
+      setPriceItems(Array.isArray(kalimatiData.items) ? kalimatiData.items : []);
+      setPremiumDocs(premiumData || {});
+    }).finally(() => {
+      if (!cancelled) setPriceLoading(false);
+    });
+
     return () => {
       cancelled = true;
     };
@@ -96,6 +97,8 @@ export function ProductDetailTabs({ product: p, guide }) {
     guide.districtTip[distKey] ||
     guide.districtTip.default ||
     guide.districtTip[Object.keys(guide.districtTip)[0]];
+
+  const prem = premiumDocs[p.slug];
 
   return (
     <article>
@@ -134,91 +137,154 @@ export function ProductDetailTabs({ product: p, guide }) {
 
       {tab === "prices" && (
         <div className="modal-tab-pane active">
-          <div className="modal-grid">
-            <div className="modal-stat">
-              <div className="modal-stat-label">Nepal (Kalimati wholesale)</div>
-              {priceLoading ? (
-                <>
-                  <div className="modal-stat-value modal-stat-skeleton" aria-hidden />
-                  <div className="modal-stat-hint">Fetching live rates…</div>
-                </>
-              ) : kalimatiMatch ? (
-                <>
-                  <div className="modal-stat-value">
-                    {fmtPrice(kalimatiMatch.average)}/
-                    {kalimatiMatch.unit === "KG" ? "kg" : kalimatiMatch.unit}
+          {priceLoading ? (
+            <div style={{ color: "rgba(255,255,255,0.5)", padding: "20px 0" }}>
+              <div className="modal-stat-skeleton" style={{ width: "60%", height: 28, marginBottom: 12 }} aria-hidden />
+              <div className="modal-stat-skeleton" style={{ width: "40%", height: 20 }} aria-hidden />
+            </div>
+          ) : prem ? (
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              <div className="modal-grid">
+                <div className="modal-stat">
+                  <div className="modal-stat-label">Nepal (Farmgate & Export)</div>
+                  <div className="modal-stat-value">{prem.nepalFarmgate}</div>
+                  <div className="modal-stat-hint">{prem.nepalHint}</div>
+                </div>
+                <div className="modal-stat">
+                  <div className="modal-stat-label">India Wholesale</div>
+                  <div className="modal-stat-value" style={{ fontSize: 18 }}>{prem.indiaWholesale}</div>
+                  <div className="modal-stat-hint">{prem.indiaHint}</div>
+                </div>
+                <div className="modal-stat">
+                  <div className="modal-stat-label">USA Retail</div>
+                  <div className="modal-stat-value" style={{ color: "var(--purple)" }}>
+                    {prem.usaRetail}
                   </div>
-                  <div className="modal-stat-hint">
-                    Min {fmtPrice(kalimatiMatch.minimum)} · Max {fmtPrice(kalimatiMatch.maximum)} · official
-                    board table
+                  <div className="modal-stat-hint">{prem.usaHint}</div>
+                </div>
+                <div className="modal-stat">
+                  <div className="modal-stat-label">Australia Retail</div>
+                  <div className="modal-stat-value" style={{ color: "var(--purple)" }}>
+                    {prem.auRetail}
                   </div>
-                </>
+                  <div className="modal-stat-hint">{prem.auHint}</div>
+                </div>
+                <div className="modal-stat" style={{ gridColumn: "1 / -1" }}>
+                  <div className="modal-stat-label">Logistics & Shelf Life</div>
+                  <div className="modal-stat-value" style={{ fontSize: 16 }}>
+                    {prem.shelfLife}
+                  </div>
+                  <div className="modal-stat-hint" style={{ marginTop: 4 }}>
+                    {prem.shelfLifeHint}
+                  </div>
+                </div>
+              </div>
+
+              <div className="modal-grid">
+                <div className="modal-stat">
+                  <div className="modal-stat-label">Opportunity Score</div>
+                  <div className="modal-stat-value" style={{ color: "var(--gold)" }}>{prem.opportunityScore}</div>
+                  <div className="modal-stat-hint">{prem.opportunityHint}</div>
+                </div>
+                <div className="modal-stat">
+                  <div className="modal-stat-label">Current Export Value</div>
+                  <div className="modal-stat-value" style={{ fontSize: 18 }}>{prem.exportValue}</div>
+                  <div className="modal-stat-hint">{prem.exportValueHint}</div>
+                </div>
+                <div className="modal-stat" style={{ gridColumn: "1 / -1" }}>
+                  <div className="modal-stat-label">Global Competitiveness</div>
+                  <div className="modal-stat-hint" style={{ marginTop: 4, fontSize: 13, lineHeight: 1.4 }} dangerouslySetInnerHTML={{ __html: prem.globalCompetitiveness }}>
+                  </div>
+                </div>
+                <div className="modal-stat" style={{ gridColumn: "1 / -1" }}>
+                  <div className="modal-stat-label">Market Verdict: Will It Be Consumed?</div>
+                  <div className="modal-stat-hint" style={{ marginTop: 4, fontSize: 13, lineHeight: 1.4 }} dangerouslySetInnerHTML={{ __html: prem.willBeConsumed }}>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="modal-grid">
+              <div className="modal-stat">
+                <div className="modal-stat-label">Nepal (Kalimati wholesale)</div>
+                {kalimatiMatch ? (
+                  <>
+                    <div className="modal-stat-value">
+                      {fmtPrice(kalimatiMatch.average)}/
+                      {kalimatiMatch.unit === "KG" ? "kg" : kalimatiMatch.unit}
+                    </div>
+                    <div className="modal-stat-hint">
+                      Min {fmtPrice(kalimatiMatch.minimum)} · Max {fmtPrice(kalimatiMatch.maximum)} · official
+                      board table
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="modal-stat-value modal-stat-missing">—</div>
+                    <div className="modal-stat-hint">
+                      No row matched today&apos;s Kalimati list for &ldquo;{p.nepali}&rdquo;. See{" "}
+                      <a href="https://kalimatimarket.gov.np/price" target="_blank" rel="noopener noreferrer">
+                        full table
+                      </a>
+                      .
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="modal-stat">
+                <div className="modal-stat-label">India wholesale</div>
+                <div className="modal-stat-value">
+                  {p.indiaPrice ? `${fmtPrice(p.indiaPrice)}/kg` : "N/A"}
+                </div>
+              </div>
+              <div className="modal-stat">
+                <div className="modal-stat-label">USA retail</div>
+                <div className="modal-stat-value" style={{ color: "var(--purple)" }}>
+                  {fmtPrice(p.usaPrice, "$")}/kg
+                </div>
+              </div>
+              <div className="modal-stat">
+                <div className="modal-stat-label">Australia</div>
+                <div className="modal-stat-value" style={{ color: "var(--purple)" }}>
+                  {fmtPrice(p.auPrice, "A$")}/kg
+                </div>
+              </div>
+              <div className="modal-stat">
+                <div className="modal-stat-label">Shelf life</div>
+                <div className="modal-stat-value">
+                  {p.shelf === 999 ? "Indefinite" : `${p.shelf} months`}
+                </div>
+              </div>
+              <div className="modal-stat">
+                <div className="modal-stat-label">Opportunity score</div>
+                <div className="modal-stat-value">{p.opportunity}/100</div>
+              </div>
+              {p.imported ? (
+                <div
+                  className="modal-stat"
+                  style={{
+                    gridColumn: "1 / -1",
+                    background: "rgba(192,57,43,0.1)",
+                    borderColor: "rgba(255,107,107,0.25)",
+                  }}
+                >
+                  <div className="modal-stat-label" style={{ color: "#fb7185" }}>
+                    Annual import drain
+                  </div>
+                  <div className="modal-stat-value" style={{ color: "#fb7185" }}>
+                    Rs.{p.annualImportNPR} Crore/year from {p.importSource}
+                  </div>
+                </div>
               ) : (
-                <>
-                  <div className="modal-stat-value modal-stat-missing">—</div>
-                  <div className="modal-stat-hint">
-                    No row matched today&apos;s Kalimati list for &ldquo;{p.nepali}&rdquo;. See{" "}
-                    <a href="https://kalimatimarket.gov.np/price" target="_blank" rel="noopener noreferrer">
-                      full table
-                    </a>
-                    .
+                <div className="modal-stat">
+                  <div className="modal-stat-label">Export value</div>
+                  <div className="modal-stat-value">
+                    {p.exportVal > 0 ? `Rs.${p.exportVal}M/yr` : "Near zero"}
                   </div>
-                </>
+                </div>
               )}
             </div>
-            <div className="modal-stat">
-              <div className="modal-stat-label">India wholesale</div>
-              <div className="modal-stat-value">
-                {p.indiaPrice ? `${fmtPrice(p.indiaPrice)}/kg` : "N/A"}
-              </div>
-            </div>
-            <div className="modal-stat">
-              <div className="modal-stat-label">USA retail</div>
-              <div className="modal-stat-value" style={{ color: "var(--purple)" }}>
-                {fmtPrice(p.usaPrice, "$")}/kg
-              </div>
-            </div>
-            <div className="modal-stat">
-              <div className="modal-stat-label">Australia</div>
-              <div className="modal-stat-value" style={{ color: "var(--purple)" }}>
-                {fmtPrice(p.auPrice, "A$")}/kg
-              </div>
-            </div>
-            <div className="modal-stat">
-              <div className="modal-stat-label">Shelf life</div>
-              <div className="modal-stat-value">
-                {p.shelf === 999 ? "Indefinite" : `${p.shelf} months`}
-              </div>
-            </div>
-            <div className="modal-stat">
-              <div className="modal-stat-label">Opportunity score</div>
-              <div className="modal-stat-value">{p.opportunity}/100</div>
-            </div>
-            {p.imported ? (
-              <div
-                className="modal-stat"
-                style={{
-                  gridColumn: "1 / -1",
-                  background: "rgba(192,57,43,0.1)",
-                  borderColor: "rgba(255,107,107,0.25)",
-                }}
-              >
-                <div className="modal-stat-label" style={{ color: "#fb7185" }}>
-                  Annual import drain
-                </div>
-                <div className="modal-stat-value" style={{ color: "#fb7185" }}>
-                  Rs.{p.annualImportNPR} Crore/year from {p.importSource}
-                </div>
-              </div>
-            ) : (
-              <div className="modal-stat">
-                <div className="modal-stat-label">Export value</div>
-                <div className="modal-stat-value">
-                  {p.exportVal > 0 ? `Rs.${p.exportVal}M/yr` : "Near zero"}
-                </div>
-              </div>
-            )}
-          </div>
+          )}
           <div style={{ marginTop: 14 }}>
             <div
               style={{

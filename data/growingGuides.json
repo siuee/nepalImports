@@ -79,7 +79,20 @@
         "desc": "How to identify and treat Chirke and Foorkey diseases in eastern Nepal cardamom farms"
       }
     ],
-    "warnings": "Do NOT plant on waterlogged land — roots rot within weeks. Do NOT use chemical pesticides — loses organic premium. Do NOT harvest early (green pods) — reduces quality grade and price by 40%."
+    "warnings": "Do NOT plant on waterlogged land — roots rot within weeks. Do NOT use chemical pesticides — loses organic premium. Do NOT harvest early (green pods) — reduces quality grade and price by 40%.",
+    "commercial": {
+      "massProductionZone": "Phungling, Furumbu, Sikaicha (Taplejung District)",
+      "contactInfo": "Taplejung Cardamom Cooperative District Office (Contact via AKC Taplejung). Ph: +977-24-460144 (AKC)",
+      "seedPrice": "Varies by nursery (~Rs. 20-35 per seedling depending on age)",
+      "seedGuidance": "Sourced primarily from private nurseries in Ilam and Taplejung. Official certified disease-free seedlings are sometimes subsidized by NARC/AKC. Plant in partial shade on north-facing slopes.",
+      "commercialSteps": [
+        "Secure 5-10 hectares of north-facing sloped land with natural forest canopy (Alder/Utis trees are ideal).",
+        "Establish a robust irrigation system from a perennial spring to maintain 70-90% humidity.",
+        "Procure NARC-certified disease-free seedlings (e.g., Ramsey, Golsey varieties) through your local Agriculture Knowledge Centre (AKC) to prevent Chirke/Foorkey viruses.",
+        "Construct a modern 'Bhatti' (drying oven) with temperature control (50-55°C) to process high volumes without smoke-tainting the pods.",
+        "Register an agricultural firm and partner with the Large Cardamom Development Centre (LCDC) in Fikkal for technical support and export grading."
+      ]
+    }
   },
   "2": {
     "districtTip": {
@@ -156,7 +169,20 @@
         "desc": "Identifying and treating Nepal's most devastating ginger disease before it destroys your harvest"
       }
     ],
-    "warnings": "NEVER plant ginger in the same field two years in a row — soft rot disease accumulates. NEVER waterlog — roots rot in 24 hours. Avoid full direct afternoon sun — reduces yield 30%."
+    "warnings": "NEVER plant ginger in the same field two years in a row — soft rot disease accumulates. NEVER waterlog — roots rot in 24 hours. Avoid full direct afternoon sun — reduces yield 30%.",
+    "commercial": {
+      "massProductionZone": "Tansen Area (Palpa District) & Galyang (Syangja District)",
+      "contactInfo": "Palpa Ginger Cooperative / Agriculture Knowledge Centre (AKC) Palpa. Ph: +977-71-520126",
+      "seedPrice": "Wholesale ginger seed rhizomes cost between Rs. 150-250 per kg depending on season and variety.",
+      "seedGuidance": "NARC recommends treating seed rhizomes with Dithane M-45 to prevent soft rot. Do not reuse rhizomes from infected fields. Obtain 'Palpa Local' or 'Kapurbakot' varieties from certified co-ops.",
+      "commercialSteps": [
+        "Acquire 10-20 ropanis of loamy, well-draining hillside; water-logging kills ginger instantly.",
+        "Source 500-1000 kg of disease-free seed rhizomes from certified NARC multiplication farms.",
+        "Invest in large-scale mulching materials (paddy straw/leaves) which is critical for moisture retention.",
+        "Set up post-harvest washing and solar-drying facilities to produce 'Sutho' (dried ginger) for export.",
+        "Obtain organic certification via local cooperatives to target premium Indian and overseas markets."
+      ]
+    }
   },
   "3": {
     "districtTip": {
@@ -232,7 +258,20 @@
         "desc": "Post-harvest treatment including boiling, drying and polishing for maximum market value"
       }
     ],
-    "warnings": "Do NOT harvest before 8 months — curcumin content is too low. Do NOT skip boiling — raw turmeric dries unevenly. Never plant in previous year's turmeric field without 2-year gap."
+    "warnings": "Do NOT harvest before 8 months — curcumin content is too low. Do NOT skip boiling — raw turmeric dries unevenly. Never plant in previous year's turmeric field without 2-year gap.",
+    "commercial": {
+      "massProductionZone": "Sandhikharka (Arghakhanchi District) & Surkhet District",
+      "contactInfo": "AKC Arghakhanchi / NARC Ginger/Turmeric Research Station. Support available via PMAMP (Prime Minister Agriculture Modernisation Project).",
+      "seedPrice": "Seed rhizomes range Rs. 100-200 per kg at local distributors.",
+      "seedGuidance": "Select 'Surya' or 'Roma' varieties for high curcumin content (crucial for export). Obtain certified virus-free rhizomes.",
+      "commercialSteps": [
+        "Prepare extensive raised beds (1m wide, 15cm high) along contours to manage monsoon runoff.",
+        "Source high-curcumin varieties (Surya) via DADO/AKC subsidy programs.",
+        "Establish a central processing facility with industrial boilers; boiling for 45 mins is required before drying.",
+        "Invest in mechanical polishers to achieve the shiny yellow surface required for Grade A export.",
+        "Form a producer group (minimum 25 farmers) to access PMAMP zone subsidies and shared machinery."
+      ]
+    }
   },
   "8": {
     "districtTip": {
@@ -302,7 +341,20 @@
         "desc": "Setting up an organic certified tea garden for direct export — Ilam district model"
       }
     ],
-    "warnings": "Tea needs 3+ years before first harvest — do NOT expect quick returns. Never plant in soil above pH 6.0. Never use wood ash or lime. Young plants MUST be weaned before full sun exposure."
+    "warnings": "Tea needs 3+ years before first harvest — do NOT expect quick returns. Never plant in soil above pH 6.0. Never use wood ash or lime. Young plants MUST be weaned before full sun exposure.",
+    "commercial": {
+      "massProductionZone": "Fikkal and Kanyam (Ilam District)",
+      "contactInfo": "National Tea and Coffee Development Board (NTCDB) Regional Office, Birtamod. Ph: +977-23-540114 | Ilam Tea Producers",
+      "seedPrice": "Clonal cuttings (e.g. TV-1) range Rs. 10-30 per rooted cutting at certified nurseries.",
+      "seedGuidance": "Vegetative propagation (cuttings) is mandatory for commercial quality. Do not use seeds. NTCDB provides lists of certified nurseries in Koshi Province.",
+      "commercialSteps": [
+        "Acquire 50+ ropanis of acidic soil (pH 4.5-5.5) between 1,000-2,000m altitude.",
+        "Import or source proven clonal cuttings (TV-1, TV-25) and raise them in shade nets for 6 months.",
+        "Plant in double-hedge row systems with designated shade trees (Silver Oak).",
+        "Construct an Orthodox processing factory (withering troughs, rollers, oxidation rooms, dryers) directly adjacent to the farm.",
+        "Achieve ISO and Organic/Fair Trade certifications to target European and Japanese export markets directly."
+      ]
+    }
   },
   "10": {
     "districtTip": {
@@ -373,7 +425,20 @@
         "desc": "How to process coffee at farm level for maximum specialty grade value in Nepal"
       }
     ],
-    "warnings": "Never pick green cherries — ruins batch quality. Never skip shade trees — coffee scorches in Nepal sun. Coffee takes 2–3 years before return — plan finances accordingly."
+    "warnings": "Never pick green cherries — ruins batch quality. Never skip shade trees — coffee scorches in Nepal sun. Coffee takes 2–3 years before return — plan finances accordingly.",
+    "commercial": {
+      "massProductionZone": "Gulmi, Palpa, and Kaski Districts",
+      "contactInfo": "National Tea and Coffee Development Board (NTCDB), Kathmandu. Ph: +977-1-4495547 / Coffee Cooperative Union Gulmi.",
+      "seedPrice": "Grafted seedlings (Arabica: Typica/Bourbon) usually Rs. 50-100 per seedling depending on age.",
+      "seedGuidance": "NTCDB and local cooperatives provide reliable saplings. Avoid Robusta. Ensure saplings are 6+ months old before transplanting during the monsoon.",
+      "commercialSteps": [
+        "Select mid-hill land (1,000-1,600m) with established shade (or plant Silver Oak beforehand).",
+        "Source certified Arabica seedlings from NTCDB-approved nurseries.",
+        "Install drip irrigation for the dry season and establish a natural pest management system (neem/cow urine).",
+        "Build a wet-processing mill (depulper, fermentation tanks, raised drying beds) to produce specialty 'washed' coffee.",
+        "Brand the farm for agri-tourism (especially near Pokhara/Kaski) to sell roasted beans at 3x the wholesale price."
+      ]
+    }
   },
   "14": {
     "districtTip": {
@@ -425,7 +490,20 @@
         "desc": "Full documentary on collection, grading, and trade of Nepal's most valuable wild product"
       }
     ],
-    "warnings": "ILLEGAL to collect without permit — can result in Rs.50,000 fine. NEVER collect below 3,500m — false product. NEVER wash with water. Overcollection destroys next year's population permanently."
+    "warnings": "ILLEGAL to collect without permit — can result in Rs.50,000 fine. NEVER collect below 3,500m — false product. NEVER wash with water. Overcollection destroys next year's population permanently.",
+    "commercial": {
+      "massProductionZone": "Wild Harvest Only: Dolpa and Humla Alpine Regions (3500-5000m)",
+      "contactInfo": "Department of Forests and Soil Conservation / District Forest Office (DFO) in Dolpa or Humla.",
+      "seedPrice": "Not Applicable. Wild product. No seed/sapling exists.",
+      "seedGuidance": "Cannot be cultivated. It is a wild-harvested fungal-caterpillar symbiosis. Requires government extraction permits.",
+      "commercialSteps": [
+        "Note: Cultivation is scientifically unviable. Commercial operation involves organized harvesting.",
+        "Register a local Community Forest User Group (CFUG) and obtain legal harvesting permits from the DFO.",
+        "Deploy organized, trained harvesting teams to high altitudes (3,500-5,000m) from May to July.",
+        "Establish strict on-site cleaning and solar-drying protocols immediately after harvest to prevent fungal degradation.",
+        "Secure export licenses from the Ministry of Forests and Environment and find buyers in traditional Chinese medicine markets."
+      ]
+    }
   },
   "20": {
     "districtTip": {
@@ -477,7 +555,20 @@
         "desc": "How yak churpi became Nepal's fastest growing export — from highland pasture to PetSmart"
       }
     ],
-    "warnings": "Never use cow milk — must be pure yak for authentic product and export certification. Never skip pressing — soft churpi does not qualify for dog chew export. Moisture ruins product — must be completely dried."
+    "warnings": "Never use cow milk — must be pure yak for authentic product and export certification. Never skip pressing — soft churpi does not qualify for dog chew export. Moisture ruins product — must be completely dried.",
+    "commercial": {
+      "massProductionZone": "Solukhumbu, Mustang, and Rasuwa High Pastures",
+      "contactInfo": "Diary Development Corporation (DDC) Nepal / Local Yak Cheese Cooperatives. e.g., Sagarmatha Cheese Cooperative.",
+      "seedPrice": "Not Applicable (Livestock dairy product). Adult Yaks cost between Rs. 80,000 to Rs. 150,000 depending on breed and region.",
+      "seedGuidance": "Maintain healthy Yak herds. Access to high-quality alpine pasture is critical. Consult veterinary services at DADO.",
+      "commercialSteps": [
+        "Acquire a commercial-sized herd of Yaks/Chauris (30-50 minimum) and grazing rights in alpine pastures (3,000m+).",
+        "Establish a mobile or semi-permanent high-altitude dairy processing unit.",
+        "Implement industrial-scale curdling and hydraulic pressing systems to achieve maximum hardness.",
+        "Build a sanitized, temperature-controlled smoking house for consistent drying and flavor profiles.",
+        "Partner with a TEPC-registered export company in Kathmandu to vacuum-seal and air-freight the dog chews to the USA."
+      ]
+    }
   },
   "27": {
     "districtTip": {
@@ -547,6 +638,19 @@
         "desc": "How to graft apple trees for better quality and faster fruiting in Nepal conditions"
       }
     ],
-    "warnings": "Never plant seedling apples — only grafted. Must have 2+ varieties for pollination. Never harvest before seeds turn brown — ruins flavor and storage. Cold winters are essential — do NOT plant below 2,000m in Nepal."
+    "warnings": "Never plant seedling apples — only grafted. Must have 2+ varieties for pollination. Never harvest before seeds turn brown — ruins flavor and storage. Cold winters are essential — do NOT plant below 2,000m in Nepal.",
+    "commercial": {
+      "massProductionZone": "Jumla and Mustang Districts",
+      "contactInfo": "Temperate Horticulture Development Center (THDC), Marpha, Mustang. Email: thdc.marpha@gmail.com | Phone: 069-400034",
+      "seedPrice": "Grafted apple saplings cost NRs. 70 per sapling at THDC Marpha (government subsidized price).",
+      "seedGuidance": "Seedlings must be grafted (e.g. M-9 or M-26 rootstock). Contact THDC or AKC for certified grafted saplings. Jumla/Mustang areas require 1000+ chilling hours.",
+      "commercialSteps": [
+        "Acquire land on south-facing slopes above 2,200m in Jumla, Mustang, or Manang.",
+        "Procure 1,000+ grafted saplings (e.g., Red Delicious, Golden Delicious) at government-subsidized rates from NARC/THDC.",
+        "Plant in high-density systems (with dwarf rootstock if available) and interplant pollinator varieties at a 1:8 ratio.",
+        "Integrate commercial beekeeping within the orchard to maximize yield and provide an additional honey revenue stream.",
+        "Establish cold storage facilities (controlled atmosphere) to sell 'Himalayan Organic Apples' at peak prices in the off-season."
+      ]
+    }
   }
 }
